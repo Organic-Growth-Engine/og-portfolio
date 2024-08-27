@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body>
+    <div class="Container">
+      <div class="sidebar">
+        <div class="head">
+          <i class="fa-solid fa-circle-user fa-10x"></i>
+          <h3 class="heading">LecturaX</h3>
+        </div>
+        <div class="head-2">
+          <a href="Profile.html" id="account-link"><h3>Account</h3></a>
+          <a href="Password.html" id="password-link"><h3>Password</h3></a>
+          <a href="Dashboard.html" id="dashboard-link"><h3>Back To Dashboard</h3></a>
+         
+        </div>
+      </div>
+      <div class="main-content">
+        
+        <h2>Account Settings</h2>
+        <div class="flex-items">
+          <div class="flex-items-1">
+            <h3>First Name</h3>
+            <input type="text" name="first-name" />
+            <h3>School</h3>
+            <input type="text" name="School" />
+            <h3>Phone No.</h3>
+            <input type="text" name="Phone Number" />
+          </div>
+          <div class="flex-items-2">
+            <h3>Last Name</h3>
+            <input type="text" name="Last Name" />
+            <h3>Address</h3>
+            <input type="text" name="Address" />
+            <h3>Email</h3>
+            <input type="text" name="Email" />
+          </div>
+        </div>
+        <div class="bio">
+          <h3>Address</h3>
+          <input type="text" name="Address" />
+        </div>
+        <div class="Buttons">
+          <a href="#"><button type="Submit" id="update-btn" class="btn-update">
+            Update
+          </button></a>
+          <a href="#"><button type="Submit" id="cancel-btn" class="btn-cancel">
+            Cancel
+          </button></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.href;
+
+        if (currentPage.includes("Profile.html")) {
+          document.getElementById("account-link").classList.add("active");
+        } else if (currentPage.includes("Password.html")) {
+          document.getElementById("password-link").classList.add("active");
+        }
+        else if (currentPage.includes("Dashboard.html")) {
+          document.getElementById("dashboard-link").classList.add("active");
+        }
+        document
+          .getElementById("cancel-btn")
+          .addEventListener("click", function () {
+            // Change the colors
+            document.getElementById("update-btn").classList.remove("update");
+            document.getElementById("update-btn").classList.add("cancel");
+            document.getElementById("cancel-btn").classList.remove("cancel");
+            document.getElementById("cancel-btn").classList.add("update");
+
+            // Revert back after 1 second
+            setTimeout(function () {
+              document.getElementById("update-btn").classList.remove("cancel");
+              document.getElementById("update-btn").classList.add("update");
+              document.getElementById("cancel-btn").classList.remove("update");
+              document.getElementById("cancel-btn").classList.add("cancel");
+            }, 1000);
+          });
+      });
+    </script>
+  </body>
+</html>
