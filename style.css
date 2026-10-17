@@ -508,6 +508,30 @@ body {
   background-size: cover;
 }
 
+#smm-section .brand-bg {
+  background-image: url("assets/SMM.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#performance-marketing-section .brand-bg {
+  background-image: url("assets/PM.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#influencer-marketing-section .brand-bg {
+  background-image: url("assets/IM-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#events-section .brand-bg {
+  background-image: url("assets/Events.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 .brand-bg-img {
   width: 100%;
   height: 100%;
