@@ -52,7 +52,7 @@ const cases = {
       "The work gave our community a voice that felt immediate, human, and unmistakably ours.",
     person: "Nora Shah",
     role: "Brand Lead",
-    image: "assets/project-soma.jpg",
+    image: "assets/SMM.jpg",
     thumbs: [
       "assets/project-soma.jpg",
       "assets/project-kinfolk.jpg",
@@ -73,7 +73,7 @@ const cases = {
       "The strategy connected every signal to a story, turning performance into something people actually remembered.",
     person: "Jon Bell",
     role: "Growth Director",
-    image: "assets/project-velox.jpg",
+    image: "assets/PM.jpg",
     thumbs: [
       "assets/project-velox.jpg",
       "assets/project-lumina.jpg",
@@ -94,7 +94,7 @@ const cases = {
       "OGMedia found the people who could carry the idea naturally, without losing what made it ours.",
     person: "Iris Cole",
     role: "Marketing Director",
-    image: "assets/project-kinfolk.jpg",
+    image: "assets/IM-1.jpg",
     thumbs: [
       "assets/project-kinfolk.jpg",
       "assets/project-aethel.jpg",
@@ -115,7 +115,7 @@ const cases = {
       "The event felt effortless in the room and unforgettable long after everyone went home.",
     person: "Theo James",
     role: "Experience Director",
-    image: "assets/project-aethel.jpg",
+    image: "assets/Events.jpg",
     thumbs: [
       "assets/project-aethel.jpg",
       "assets/project-lumina.jpg",
