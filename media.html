@@ -14,9 +14,10 @@
         <a
           href="index.html"
           class="case-landing-logo"
-          aria-label="Back to OGMedia"
-          >OGMedia</a
+          aria-label="Back to home"
         >
+          <img src="assets/og-engine-logo.svg" alt="OG logo" />
+        </a>
         <span data-case-hero-label></span>
         <button class="case-menu" type="button" aria-label="Open menu">
           &#9776;
@@ -26,7 +27,9 @@
       <h1 class="case-landing-title" data-case-hero-title></h1>
     </section>
     <header class="case-header">
-      <a href="index.html">OGMedia</a><span data-case-label></span>
+      <a class="case-header-logo" href="index.html" aria-label="Home"
+        ><img src="assets/og-engine-logo.svg" alt="OG logo"
+      /></a><span data-case-label></span>
     </header>
     <main class="case-shell">
       <section class="case-story">
@@ -49,10 +52,37 @@
         data-case-thumbnails
         aria-label="Related work"
       ></nav>
+      <nav
+        class="media-portfolio-nav"
+        data-media-portfolio-nav
+        aria-label="Explore all portfolio categories"
+      ></nav>
     </main>
+    <section
+      class="media-portfolio"
+      data-media-portfolio
+      aria-labelledby="media-portfolio-title"
+    >
+      <header class="media-portfolio-header">
+        <p class="case-eyebrow">Beyond the highlights</p>
+        <h2 id="media-portfolio-title">More of our work</h2>
+        <p>
+          Explore the stories we capture across campuses, live events, brands,
+          and products.
+        </p>
+      </header>
+      <div
+        class="media-portfolio-categories"
+        data-media-portfolio-categories
+      ></div>
+    </section>
     <footer class="case-footer">
-      <a href="index.html">Back to index</a><span>Since 2026 / OGMedia</span>
+      <a href="index.html">Back to index</a>
+      <span class="case-footer-credit">
+        Since 2026 /
+        <img src="assets/og-engine-logo.svg" alt="OG logo" />
+      </span>
     </footer>
-    <script src="case.js"></script>
+    <script type="module" src="case.js"></script>
   </body>
 </html>

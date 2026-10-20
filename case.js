@@ -1,3 +1,17 @@
+import mediaFeatureImage from "./assets/optimized/Media-2-feature.jpg";
+import editingImage from "./assets/optimized/Editing-feature.jpg";
+import socialImage from "./assets/optimized/SMM-feature.jpg";
+import performanceImage from "./assets/optimized/PM-feature.jpg";
+import influencerImage from "./assets/optimized/IM-2-feature.jpg";
+import eventsImage from "./assets/optimized/Events-feature.jpg";
+import mediaThumbnail from "./assets/optimized/Media-2-thumb.jpg";
+import editingThumbnail from "./assets/optimized/Editing-thumb.jpg";
+import kinfolkImage from "./assets/project-kinfolk.jpg";
+import luminaImage from "./assets/project-lumina.jpg";
+import somaImage from "./assets/project-soma.jpg";
+import veloxImage from "./assets/project-velox.jpg";
+import aethelImage from "./assets/project-aethel.jpg";
+
 const cases = {
   media: {
     label: "Media",
@@ -10,16 +24,22 @@ const cases = {
       "OGMedia brought clarity to the story and restraint to the execution. The process was thoughtful, collaborative, and deeply considered.",
     person: "Alex Morgan",
     role: "Creative Director",
-    image: "assets/Media-2.jpg",
-    video:
-      "https://d3p12bvhtoj2vu.cloudfront.net/GDG%20Event%20launch%20by%20@OGENGINE%20[S9MwyFOZZek].webm",
+    image: mediaFeatureImage,
+    videos: [
+      "https://d3p12bvhtoj2vu.cloudfront.net/videos/UNIFEST.mp4",
+      "https://d3p12bvhtoj2vu.cloudfront.net/media/ChargeZone%20Expo.mp4",
+      null,
+      null,
+      null,
+      null,
+    ],
     thumbs: [
-      "assets/Media-2.jpg",
-      "assets/project-kinfolk.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-soma.jpg",
-      "assets/project-velox.jpg",
-      "assets/project-aethel.jpg",
+      mediaThumbnail,
+      kinfolkImage,
+      luminaImage,
+      somaImage,
+      veloxImage,
+      aethelImage,
     ],
   },
   editing: {
@@ -33,14 +53,14 @@ const cases = {
       "The edit gave the idea room to breathe. Every cut felt intentional, and the final piece carried exactly the weight it needed.",
     person: "Maya Chen",
     role: "Film Producer",
-    image: "assets/Editing.jpg",
+    image: editingImage,
     thumbs: [
-      "assets/Editing.jpg",
-      "assets/project-soma.jpg",
-      "assets/project-velox.jpg",
-      "assets/project-kinfolk.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-aethel.jpg",
+      editingThumbnail,
+      somaImage,
+      veloxImage,
+      kinfolkImage,
+      luminaImage,
+      aethelImage,
     ],
   },
   smm: {
@@ -54,14 +74,14 @@ const cases = {
       "The work gave our community a voice that felt immediate, human, and unmistakably ours.",
     person: "Nora Shah",
     role: "Brand Lead",
-    image: "assets/SMM.jpg",
+    image: socialImage,
     thumbs: [
-      "assets/project-soma.jpg",
-      "assets/project-kinfolk.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-velox.jpg",
-      "assets/project-aethel.jpg",
-      "assets/Media-2.jpg",
+      somaImage,
+      kinfolkImage,
+      luminaImage,
+      veloxImage,
+      aethelImage,
+      mediaThumbnail,
     ],
   },
   performance: {
@@ -75,14 +95,14 @@ const cases = {
       "The strategy connected every signal to a story, turning performance into something people actually remembered.",
     person: "Jon Bell",
     role: "Growth Director",
-    image: "assets/PM.jpg",
+    image: performanceImage,
     thumbs: [
-      "assets/project-velox.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-soma.jpg",
-      "assets/project-aethel.jpg",
-      "assets/project-kinfolk.jpg",
-      "assets/Editing.jpg",
+      veloxImage,
+      luminaImage,
+      somaImage,
+      aethelImage,
+      kinfolkImage,
+      editingThumbnail,
     ],
   },
   influencer: {
@@ -96,14 +116,14 @@ const cases = {
       "OGMedia found the people who could carry the idea naturally, without losing what made it ours.",
     person: "Iris Cole",
     role: "Marketing Director",
-    image: "assets/IM-1.jpg",
+    image: influencerImage,
     thumbs: [
-      "assets/project-kinfolk.jpg",
-      "assets/project-aethel.jpg",
-      "assets/project-soma.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-velox.jpg",
-      "assets/Media-2.jpg",
+      kinfolkImage,
+      aethelImage,
+      somaImage,
+      luminaImage,
+      veloxImage,
+      mediaThumbnail,
     ],
   },
   events: {
@@ -117,19 +137,61 @@ const cases = {
       "The event felt effortless in the room and unforgettable long after everyone went home.",
     person: "Theo James",
     role: "Experience Director",
-    image: "assets/Events.jpg",
+    image: eventsImage,
     thumbs: [
-      "assets/project-aethel.jpg",
-      "assets/project-lumina.jpg",
-      "assets/project-soma.jpg",
-      "assets/project-kinfolk.jpg",
-      "assets/project-velox.jpg",
-      "assets/Editing.jpg",
+      aethelImage,
+      luminaImage,
+      somaImage,
+      kinfolkImage,
+      veloxImage,
+      editingThumbnail,
     ],
   },
 };
 
 const currentCase = cases[document.body.dataset.case] || cases.media;
+
+const mediaPortfolioCategories = [
+  {
+    id: "universities",
+    title: "Universities",
+    description: "Campus life, student communities, and milestone moments.",
+  },
+  {
+    id: "events-fests",
+    title: "Events & Fests",
+    description: "Stages, crowds, performances, and the energy of live events.",
+  },
+  {
+    id: "corporate",
+    title: "Corporate",
+    description: "The people, spaces, and moments behind organizations.",
+  },
+  {
+    id: "automotive",
+    title: "Automotive",
+    description: "Vehicles photographed with an eye for design and detail.",
+  },
+  {
+    id: "portraits",
+    title: "Portraits",
+    description: "Personal portraits with character and presence.",
+  },
+  {
+    id: "product-shoots",
+    title: "Product Shoots",
+    description: "Product imagery focused on form, texture, and detail.",
+  },
+];
+
+const mediaPortfolioSlots = [
+  { orientation: "portrait", label: "Vertical photo or video" },
+  { orientation: "portrait", label: "Vertical photo or video" },
+  { orientation: "landscape", label: "Horizontal photo or video" },
+  { orientation: "landscape", label: "Horizontal photo or video" },
+  { orientation: "portrait", label: "Vertical photo or video" },
+  { orientation: "portrait", label: "Vertical photo or video" },
+];
 
 document.title = `${currentCase.label} | OGMedia`;
 document.querySelector("[data-case-label]").textContent = currentCase.label;
@@ -151,30 +213,152 @@ const feature = document.querySelector("[data-case-feature]");
 const hero = document.querySelector("[data-case-hero]");
 const thumbnailRail = document.querySelector("[data-case-thumbnails]");
 
+const mediaPortfolio = document.querySelector("[data-media-portfolio]");
+
+if (mediaPortfolio && currentCase === cases.media) {
+  const categoryNav = document.querySelector("[data-media-portfolio-nav]");
+  const categoryList = mediaPortfolio.querySelector(
+    "[data-media-portfolio-categories]",
+  );
+
+  mediaPortfolioCategories.forEach((category, index) => {
+    const link = document.createElement("a");
+    link.href = `#${category.id}`;
+    link.textContent = `${String(index + 1).padStart(2, "0")} / ${category.title}`;
+    categoryNav.append(link);
+
+    const section = document.createElement("section");
+    section.className = "media-portfolio-category";
+    section.id = category.id;
+
+    const heading = document.createElement("div");
+    heading.className = "media-portfolio-category-heading";
+
+    const number = document.createElement("p");
+    number.className = "case-index";
+    number.textContent = `0${index + 1}`;
+
+    const title = document.createElement("h3");
+    title.textContent = category.title;
+
+    const description = document.createElement("p");
+    description.textContent = category.description;
+
+    heading.append(number, title, description);
+
+    const gallery = document.createElement("div");
+    gallery.className = "media-portfolio-gallery";
+
+    mediaPortfolioSlots.forEach((slot) => {
+      const placeholder = document.createElement("figure");
+      placeholder.className = `media-portfolio-placeholder media-portfolio-placeholder--${slot.orientation}`;
+      placeholder.setAttribute("aria-label", slot.label);
+
+      const placeholderText = document.createElement("span");
+      placeholderText.textContent = slot.label;
+      placeholder.append(placeholderText);
+      gallery.append(placeholder);
+    });
+
+    const controls = document.createElement("div");
+    controls.className = "media-portfolio-controls";
+
+    const previousButton = document.createElement("button");
+    previousButton.type = "button";
+    previousButton.className = "media-portfolio-control";
+    previousButton.setAttribute("aria-label", `Previous ${category.title} work`);
+    previousButton.textContent = "←";
+
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.className = "media-portfolio-control";
+    nextButton.setAttribute("aria-label", `Next ${category.title} work`);
+    nextButton.textContent = "→";
+
+    const updateControls = () => {
+      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+      previousButton.disabled = gallery.scrollLeft <= 0;
+      nextButton.disabled = gallery.scrollLeft >= maxScroll - 1;
+    };
+
+    const scrollGallery = (direction) => {
+      const firstSlot = gallery.querySelector(".media-portfolio-placeholder");
+      const gap = Number.parseFloat(getComputedStyle(gallery).columnGap) || 0;
+      const distance = (firstSlot?.getBoundingClientRect().width || 240) + gap;
+      gallery.scrollLeft += distance * direction;
+    };
+
+    previousButton.addEventListener("click", () => scrollGallery(-1));
+    nextButton.addEventListener("click", () => scrollGallery(1));
+    gallery.addEventListener("scroll", updateControls, { passive: true });
+    window.addEventListener("resize", updateControls);
+
+    controls.append(previousButton, nextButton);
+    section.append(heading, controls, gallery);
+    categoryList.append(section);
+    requestAnimationFrame(updateControls);
+  });
+}
+
 let featureVideo = null;
 
-if (currentCase.video) {
+if (currentCase.videos?.some(Boolean)) {
   featureVideo = document.createElement("video");
   featureVideo.className = "case-feature-video";
-  featureVideo.src = currentCase.video;
-  featureVideo.poster = currentCase.image;
   featureVideo.autoplay = true;
   featureVideo.muted = true;
   featureVideo.loop = true;
+  featureVideo.preload = "none";
   featureVideo.playsInline = true;
   featureVideo.setAttribute("aria-label", `${currentCase.label} showreel`);
   feature.before(featureVideo);
   feature.closest(".case-feature").classList.add("has-video");
 }
 
+let selectedVideoSource = null;
+let featureIsVisible = false;
+
+function playSelectedVideo() {
+  if (!featureVideo || !selectedVideoSource) return;
+  if (!featureIsVisible || document.hidden) return;
+
+  if (featureVideo.getAttribute("src") !== selectedVideoSource) {
+    featureVideo.src = selectedVideoSource;
+    featureVideo.load();
+  }
+
+  featureVideo.play().catch((error) => {
+    if (error.name !== "AbortError" && !document.hidden) {
+      console.warn("The selected portfolio video could not start.", error);
+    }
+  });
+}
+
+if (featureVideo) {
+  const featureVisibility = new IntersectionObserver(([entry]) => {
+    featureIsVisible = entry.isIntersecting;
+    if (featureIsVisible) playSelectedVideo();
+    else featureVideo.pause();
+  });
+
+  featureVisibility.observe(feature.closest(".case-feature"));
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) featureVideo.pause();
+    else playSelectedVideo();
+  });
+}
+
 function showImage(source, activeIndex) {
-  // Thumbnail 01 is the lead slot: it shows the video when the case has one.
-  const showVideo = Boolean(featureVideo) && activeIndex === 0;
+  const videoSource = currentCase.videos?.[activeIndex];
+  const showVideo = Boolean(featureVideo && videoSource);
 
   if (featureVideo) {
+    featureVideo.pause();
+    featureVideo.poster =
+      videoSource && activeIndex === 0 ? currentCase.image : source;
+    selectedVideoSource = videoSource;
     featureVideo.hidden = !showVideo;
-    if (showVideo) featureVideo.play().catch(() => {});
-    else featureVideo.pause();
+    if (showVideo) playSelectedVideo();
   }
   feature.hidden = showVideo;
   feature.src = source;
@@ -186,12 +370,24 @@ function showImage(source, activeIndex) {
 
 hero.src = currentCase.image;
 hero.alt = `${currentCase.label} placeholder background`;
+hero.decoding = "async";
 
 currentCase.thumbs.forEach((source, index) => {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "case-thumb";
-  button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><img src="${source}" alt="">`;
+  button.setAttribute(
+    "aria-label",
+    `Show ${currentCase.label} work ${String(index + 1).padStart(2, "0")}`,
+  );
+  const number = document.createElement("span");
+  number.textContent = String(index + 1).padStart(2, "0");
+  const thumbnail = document.createElement("img");
+  thumbnail.src = source;
+  thumbnail.alt = "";
+  thumbnail.loading = "lazy";
+  thumbnail.decoding = "async";
+  button.append(number, thumbnail);
   button.addEventListener("click", () => showImage(source, index));
   thumbnailRail.append(button);
 });

@@ -34,7 +34,13 @@ body {
   overflow-x: clip;
   background-color: #000000;
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   user-select: none;
 }
 
@@ -75,7 +81,8 @@ body {
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transition:
+      width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
       height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
       background-color 0.2s ease,
       border-color 0.2s ease;
@@ -90,7 +97,6 @@ body {
 }
 
 @media (pointer: coarse) {
-
   .cursor-dot,
   .cursor-circle {
     display: none !important;
@@ -137,11 +143,13 @@ body {
   transform: translate(-50%, -50%);
   width: clamp(700px, 80vw, 1500px);
   height: clamp(500px, 75vh, 1000px);
-  background: radial-gradient(ellipse 65% 55% at 50% 50%,
-      rgba(25, 75, 150, 0.42) 0%,
-      rgba(14, 45, 95, 0.25) 45%,
-      rgba(6, 20, 50, 0.08) 70%,
-      transparent 100%);
+  background: radial-gradient(
+    ellipse 65% 55% at 50% 50%,
+    rgba(25, 75, 150, 0.42) 0%,
+    rgba(14, 45, 95, 0.25) 45%,
+    rgba(6, 20, 50, 0.08) 70%,
+    transparent 100%
+  );
   filter: blur(65px);
   z-index: 1;
   pointer-events: none;
@@ -177,13 +185,38 @@ body {
   z-index: 3;
   background:
     /* Bottom — strong fade to pure black for seamless transition into next section */
-    linear-gradient(to top, #000000 0%, #000000 8%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,0.4) 28%, transparent 40%),
+    linear-gradient(
+      to top,
+      #000000 0%,
+      #000000 8%,
+      rgba(0, 0, 0, 0.85) 18%,
+      rgba(0, 0, 0, 0.4) 28%,
+      transparent 40%
+    ),
     /* Top edge only */
-    linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.2) 3%, transparent 7%),
+    linear-gradient(
+        to bottom,
+        #000000 0%,
+        rgba(0, 0, 0, 0.7) 1%,
+        rgba(0, 0, 0, 0.2) 3%,
+        transparent 7%
+      ),
     /* Left edge only */
-    linear-gradient(to right, #000000 0%, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.2) 3%, transparent 7%),
+    linear-gradient(
+        to right,
+        #000000 0%,
+        rgba(0, 0, 0, 0.7) 1%,
+        rgba(0, 0, 0, 0.2) 3%,
+        transparent 7%
+      ),
     /* Right edge only */
-    linear-gradient(to left, #000000 0%, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.2) 3%, transparent 7%);
+    linear-gradient(
+        to left,
+        #000000 0%,
+        rgba(0, 0, 0, 0.7) 1%,
+        rgba(0, 0, 0, 0.2) 3%,
+        transparent 7%
+      );
 }
 
 /* --- Top Navigation Header --- */
@@ -200,7 +233,9 @@ body {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .brand-logo:hover {
@@ -236,7 +271,7 @@ body {
 }
 
 .nav-link {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -248,7 +283,7 @@ body {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -289,14 +324,16 @@ body {
 }
 
 .manifesto-statement {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(1.45rem, 2.45vw, 2.65rem);
   font-weight: 600;
   line-height: 1.22;
   letter-spacing: -0.03em;
   color: #ffffff;
   text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 0, 0, 0.6);
 }
 
 /* (Scroll) */
@@ -305,21 +342,22 @@ body {
 }
 
 .scroll-link {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: #ffffff;
   text-decoration: none;
   display: inline-block;
-  transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-link:hover {
   opacity: 0.8;
   transform: translateY(2px);
 }
-
 
 /* ==========================================================================
    BRAND IDENTITY SECTION
@@ -348,12 +386,22 @@ body {
 
 .og-interlude-pinned::after {
   position: absolute;
-  content: '';
+  content: "";
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.75), transparent 28%, transparent 68%, rgba(255, 255, 255, 0.8)),
-    radial-gradient(ellipse at center, transparent 35%, rgba(255, 255, 255, 0.3) 100%);
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.75),
+      transparent 28%,
+      transparent 68%,
+      rgba(255, 255, 255, 0.8)
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
 }
 
 .og-interlude-grid {
@@ -381,7 +429,7 @@ body {
 
 .og-interlude-kicker {
   color: rgba(36, 58, 86, 0.72);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.75rem, 1vw, 0.95rem);
   font-weight: 600;
   letter-spacing: 0.24em;
@@ -390,7 +438,7 @@ body {
 
 .og-interlude-title {
   color: #07090d;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(5rem, 13vw, 13rem);
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -410,7 +458,7 @@ body {
 
 .portfolio-heading-kicker {
   color: rgba(215, 230, 250, 0.58);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.68rem, 0.85vw, 0.82rem);
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -419,7 +467,7 @@ body {
 
 .portfolio-heading h2 {
   color: #ffffff;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(3.5rem, 8vw, 8rem);
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -428,7 +476,7 @@ body {
 
 .sections-stack::before,
 .sections-stack::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 100%;
@@ -439,12 +487,22 @@ body {
 
 .sections-stack::before {
   top: 0;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.72) 32%, transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    rgba(0, 0, 0, 0.72) 32%,
+    transparent 100%
+  );
 }
 
 .sections-stack::after {
   bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.72) 68%, #000 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.72) 68%,
+    #000 100%
+  );
 }
 
 .sections-pinned {
@@ -485,7 +543,9 @@ body {
 }
 
 #editing-section {
-  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.85), 0 -1px 0 rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 -12px 32px rgba(0, 0, 0, 0.85),
+    0 -1px 0 rgba(255, 255, 255, 0.16);
 }
 
 /* Background: pure black for now, image will be added later */
@@ -497,37 +557,37 @@ body {
 }
 
 #brand-section .brand-bg {
-  background-image: url("assets/Media-2.jpg");
+  background-image: url("assets/optimized/Media-2-feature.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #editing-section .brand-bg {
-  background-image: url("assets/Editing.jpg");
+  background-image: url("assets/optimized/Editing-feature.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #smm-section .brand-bg {
-  background-image: url("assets/SMM.jpg");
+  background-image: url("assets/optimized/SMM-feature.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #performance-marketing-section .brand-bg {
-  background-image: url("assets/PM.jpg");
+  background-image: url("assets/optimized/PM-feature.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #influencer-marketing-section .brand-bg {
-  background-image: url("assets/IM-2.jpg");
+  background-image: url("assets/optimized/IM-2-feature.jpg");
   background-position: center;
   background-size: cover;
 }
 
 #events-section .brand-bg {
-  background-image: url("assets/Events.jpg");
+  background-image: url("assets/optimized/Events-feature.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -548,7 +608,12 @@ body {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.34) 48%, rgba(0, 0, 0, 0.72) 100%),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.34) 48%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
     linear-gradient(to top, rgba(0, 0, 0, 0.28) 0%, transparent 42%);
   pointer-events: none;
 }
@@ -576,7 +641,7 @@ body {
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.28);
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.68rem, 0.85vw, 0.82rem);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -584,7 +649,10 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   backdrop-filter: blur(14px);
-  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .section-cta:hover,
@@ -595,7 +663,7 @@ body {
 }
 
 .brand-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(4rem, 10vw, 12rem);
   font-weight: 400;
   line-height: 0.88;
@@ -622,7 +690,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -648,7 +716,7 @@ body {
 }
 
 .detail-page-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(6rem, 18vw, 18rem);
   font-weight: 400;
   line-height: 0.85;
@@ -691,7 +759,13 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.38), transparent 22%, transparent 52%, rgba(0, 0, 0, 0.52)),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.38),
+      transparent 22%,
+      transparent 52%,
+      rgba(0, 0, 0, 0.52)
+    ),
     linear-gradient(to right, rgba(0, 0, 0, 0.28), transparent 55%);
 }
 
@@ -705,7 +779,7 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.68rem, 0.9vw, 0.82rem);
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -714,11 +788,16 @@ body {
 
 .case-landing-logo {
   justify-self: start;
-  color: #ffffff;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.06em;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.case-landing-logo img,
+.case-header-logo img {
+  display: block;
+  width: auto;
+  height: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .case-landing-top > span {
@@ -743,7 +822,7 @@ body {
   z-index: 1;
   width: min(31rem, 38vw);
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.7rem, 0.85vw, 0.85rem);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -758,7 +837,7 @@ body {
   left: clamp(1rem, 2vw, 2rem);
   z-index: 1;
   color: #ffffff;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(5rem, 15vw, 16rem);
   font-weight: 400;
   letter-spacing: 0.025em;
@@ -772,7 +851,7 @@ body {
   justify-content: space-between;
   padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 2rem) 0;
   color: rgba(255, 255, 255, 0.72);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -785,6 +864,15 @@ body {
   text-decoration: none;
 }
 
+.case-header-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.case-header-logo img {
+  height: 1.65rem;
+}
+
 .case-shell {
   min-height: calc(100svh - 7rem);
   display: grid;
@@ -795,6 +883,7 @@ body {
 }
 
 .case-story {
+  min-width: 0;
   align-self: center;
   display: grid;
   gap: clamp(1.1rem, 2.2vw, 2rem);
@@ -806,7 +895,7 @@ body {
 .case-person,
 .case-role,
 .case-quote {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .case-eyebrow,
@@ -818,10 +907,11 @@ body {
 }
 
 .case-headline {
+  min-width: 0;
   max-width: 28rem;
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.8rem, 5.4vw, 5.8rem);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2rem, 4vw, 4.8rem);
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 0.92;
@@ -866,7 +956,7 @@ body {
 .case-feature::after {
   position: absolute;
   inset: 0;
-  content: '';
+  content: "";
   pointer-events: none;
   background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.82));
 }
@@ -896,18 +986,18 @@ body {
 }
 
 .case-quote {
-  max-width: 18rem;
+  max-width: 14rem;
   color: #ffffff;
-  font-size: clamp(0.75rem, 0.95vw, 0.9rem);
+  font-size: 0.6rem;
   line-height: 1.35;
   text-align: right;
 }
 
 .case-quote::before {
-  content: '“';
+  content: "“";
   display: block;
   color: rgba(255, 255, 255, 0.58);
-  font-size: 2.4rem;
+  font-size: 0.75rem;
   line-height: 0.5;
   text-align: left;
 }
@@ -933,7 +1023,7 @@ body {
 }
 
 .case-thumb span {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.65rem;
 }
 
@@ -944,7 +1034,10 @@ body {
   object-fit: cover;
   opacity: 0.55;
   filter: grayscale(1);
-  transition: opacity 180ms ease, filter 180ms ease, outline-color 180ms ease;
+  transition:
+    opacity 180ms ease,
+    filter 180ms ease,
+    outline-color 180ms ease;
 }
 
 .case-thumb.is-active img,
@@ -958,12 +1051,225 @@ body {
 
 .case-footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 clamp(1rem, 2vw, 2rem) 1rem;
   color: rgba(255, 255, 255, 0.45);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.case-footer-credit img {
+  display: block;
+  width: auto;
+  height: 0.9rem;
+}
+
+.media-portfolio {
+  padding: clamp(4rem, 10vw, 9rem) clamp(1rem, 4vw, 4rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.media-portfolio-header {
+  max-width: 42rem;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.media-portfolio-header h2 {
+  margin-top: 0.9rem;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.media-portfolio-header > p:last-child {
+  max-width: 30rem;
+  margin-top: 1.2rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  line-height: 1.6;
+}
+
+.media-portfolio-nav {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: clamp(1rem, 2vw, 1.5rem) 0 0;
+}
+
+.media-portfolio-nav a {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.media-portfolio-nav a:hover,
+.media-portfolio-nav a:focus-visible {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.media-portfolio-category {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  scroll-margin-top: 2rem;
+}
+
+.media-portfolio-category-heading {
+  grid-column: 1;
+}
+
+.media-portfolio-category-heading h3 {
+  margin-top: 0.8rem;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.media-portfolio-category-heading > p:last-child {
+  max-width: 19rem;
+  margin-top: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.media-portfolio-controls {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.media-portfolio-control {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    opacity 180ms ease;
+}
+
+.media-portfolio-control:hover:not(:disabled),
+.media-portfolio-control:focus-visible {
+  border-color: #ffffff;
+}
+
+.media-portfolio-control:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.media-portfolio-gallery {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: clamp(0.65rem, 1.5vw, 1.25rem);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.media-portfolio-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.media-portfolio-placeholder {
+  position: relative;
+  flex: 0 0 auto;
+  height: clamp(15rem, 30vw, 28rem);
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(255, 255, 255, 0.1), transparent 58%),
+    linear-gradient(145deg, #171717, #090909 72%);
+  color: rgba(255, 255, 255, 0.42);
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.media-portfolio-placeholder--portrait {
+  width: auto;
+  aspect-ratio: 4 / 5;
+}
+
+.media-portfolio-placeholder--landscape {
+  width: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.media-portfolio-placeholder:nth-child(3n + 2) {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255, 255, 255, 0.09), transparent 55%),
+    linear-gradient(35deg, #111111, #1a1a1a 55%, #090909);
+}
+
+.media-portfolio-placeholder:nth-child(3n) {
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(255, 255, 255, 0.045) 49%, transparent 50%),
+    linear-gradient(45deg, #080808, #181818);
+}
+
+.media-portfolio-placeholder > img,
+.media-portfolio-placeholder > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-portfolio-placeholder > img {
+  object-fit: cover;
+}
+
+.media-portfolio-placeholder > video {
+  object-fit: contain;
+  background: #000000;
+}
+
+.media-portfolio-placeholder.has-media > span {
+  display: none;
+}
+
+.media-portfolio-placeholder span {
+  font-size: 0.62rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -997,6 +1303,10 @@ body {
     grid-row: 3;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .media-portfolio-placeholder {
+    height: clamp(15rem, 65vw, 22rem);
+  }
 }
 
 /* Bottom info bar */
@@ -1011,7 +1321,7 @@ body {
 }
 
 .brand-info-item {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.72rem, 0.85vw, 0.92rem);
   font-weight: 500;
   letter-spacing: 0.07em;
@@ -1045,7 +1355,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  padding: clamp(2.75rem, 7vw, 5.75rem) clamp(3rem, 4.6vw, 5rem) clamp(2.3rem, 5vw, 4.25rem);
+  padding: clamp(2.75rem, 7vw, 5.75rem) clamp(3rem, 4.6vw, 5rem)
+    clamp(2.3rem, 5vw, 4.25rem);
   --footer-accent: #d7e6fa;
   --footer-accent-glow: rgba(215, 235, 255, 0.32);
   scroll-snap-align: start;
@@ -1053,13 +1364,18 @@ body {
 }
 
 .og-footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: clamp(10rem, 22vh, 18rem);
-  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.72) 48%, transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    rgba(0, 0, 0, 0.72) 48%,
+    transparent 100%
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -1088,10 +1404,24 @@ body {
   background-image:
     radial-gradient(circle, rgba(225, 238, 255, 0.58) 1.5px, transparent 1.5px),
     radial-gradient(circle, rgba(185, 210, 245, 0.42) 2.5px, transparent 2.5px);
-  background-size: 12px 12px, 12px 12px;
-  background-position: 0 0, 6px 6px;
-  mask-image: radial-gradient(ellipse 76% 72% at 100% 100%, #000 8%, rgba(0, 0, 0, 0.78) 38%, transparent 79%);
-  -webkit-mask-image: radial-gradient(ellipse 76% 72% at 100% 100%, #000 8%, rgba(0, 0, 0, 0.78) 38%, transparent 79%);
+  background-size:
+    12px 12px,
+    12px 12px;
+  background-position:
+    0 0,
+    6px 6px;
+  mask-image: radial-gradient(
+    ellipse 76% 72% at 100% 100%,
+    #000 8%,
+    rgba(0, 0, 0, 0.78) 38%,
+    transparent 79%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 76% 72% at 100% 100%,
+    #000 8%,
+    rgba(0, 0, 0, 0.78) 38%,
+    transparent 79%
+  );
   pointer-events: none;
   z-index: 1;
 }
@@ -1115,21 +1445,10 @@ body {
   justify-content: center;
 }
 
-.og-footer-logo-img {
-  height: clamp(82px, 10vw, 138px);
-  width: auto;
-  filter: brightness(0) invert(1) drop-shadow(0 0 26px var(--footer-accent-glow));
-}
-
-.og-footer-wordmark {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
-  font-size: clamp(4.5rem, 12.5vw, 13.5rem);
-  line-height: 1;
-  letter-spacing: -0.07em;
-  white-space: nowrap;
-  max-width: 100%;
-  color: transparent;
+.og-footer-mark {
+  display: block;
+  width: clamp(15rem, 30vw, 27rem);
+  aspect-ratio: 775 / 270;
   background: linear-gradient(
     to bottom,
     rgba(215, 230, 250, 0.16) 0%,
@@ -1137,10 +1456,9 @@ body {
     var(--footer-accent) 68%,
     var(--footer-accent) 100%
   );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 26px var(--footer-accent-glow);
+  -webkit-mask: url("assets/og-engine-logo.svg") center / contain no-repeat;
+  mask: url("assets/og-engine-logo.svg") center / contain no-repeat;
+  filter: drop-shadow(0 0 26px var(--footer-accent-glow));
 }
 
 .og-footer-bottom {
@@ -1154,7 +1472,7 @@ body {
 }
 
 .og-footer-since {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(0.62rem, 0.68vw, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1174,11 +1492,8 @@ body {
     gap: 1.5rem;
     margin-bottom: 2rem;
   }
-  .og-footer-logo-img {
-    height: clamp(50px, 12vw, 80px);
-  }
-  .og-footer-wordmark {
-    font-size: clamp(2.8rem, 15vw, 6rem);
+  .og-footer-mark {
+    width: clamp(15rem, 52vw, 24rem);
   }
   .og-footer-bottom {
     padding-top: 0.5rem;
@@ -1194,12 +1509,7 @@ body {
     padding-left: 8vw;
   }
 
-  .og-footer-logo-img {
-    height: 68px;
+  .og-footer-mark {
+    width: min(78vw, 22rem);
   }
-
-  .og-footer-wordmark {
-    font-size: clamp(2.5rem, 15vw, 5.5rem);
-  }
-
 }
