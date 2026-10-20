@@ -65,23 +65,12 @@ function initPinnedSections() {
     }),
     { target: stack },
   );
-
-  scroll(
-    (progress) => {
-      const position = progress * (panels.length - 1);
-
-      panels.forEach((panel, index) => {
-        const reveal = Math.max(0, Math.min(1, 1 - Math.abs(position - index)));
-        const blur = reveal < 0.8 ? ((0.8 - reveal) / 0.8) * 8 : 0;
-        panel.style.filter = `blur(${blur.toFixed(2)}px)`;
-      });
-    },
-    { target: stack },
-  );
 }
 
 /* --- Custom Magnetic Cursor --- */
 function initCustomCursor() {
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
   const dot = document.getElementById("cursor-dot");
   const circle = document.getElementById("cursor-circle");
 
@@ -91,20 +80,37 @@ function initCustomCursor() {
   let mouseY = window.innerHeight / 2;
   let circleX = mouseX;
   let circleY = mouseY;
+  let frameId = null;
 
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
     dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    if (frameId === null && !document.hidden) {
+      frameId = requestAnimationFrame(renderCursor);
+    }
   });
 
   function renderCursor() {
     circleX += (mouseX - circleX) * 0.18;
     circleY += (mouseY - circleY) * 0.18;
     circle.style.transform = `translate(${circleX}px, ${circleY}px)`;
-    requestAnimationFrame(renderCursor);
+    if (Math.abs(mouseX - circleX) + Math.abs(mouseY - circleY) > 0.2) {
+      frameId = requestAnimationFrame(renderCursor);
+    } else {
+      circleX = mouseX;
+      circleY = mouseY;
+      circle.style.transform = `translate(${circleX}px, ${circleY}px)`;
+      frameId = null;
+    }
   }
-  requestAnimationFrame(renderCursor);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && frameId !== null) {
+      cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+  });
 
   // Hover states on links
   const links = document.querySelectorAll("a");
