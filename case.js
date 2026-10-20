@@ -11,6 +11,8 @@ const cases = {
     person: "Alex Morgan",
     role: "Creative Director",
     image: "assets/Media-2.jpg",
+    video:
+      "https://d3p12bvhtoj2vu.cloudfront.net/GDG%20Event%20launch%20by%20@OGENGINE%20[S9MwyFOZZek].webm",
     thumbs: [
       "assets/Media-2.jpg",
       "assets/project-kinfolk.jpg",
@@ -149,7 +151,32 @@ const feature = document.querySelector("[data-case-feature]");
 const hero = document.querySelector("[data-case-hero]");
 const thumbnailRail = document.querySelector("[data-case-thumbnails]");
 
+let featureVideo = null;
+
+if (currentCase.video) {
+  featureVideo = document.createElement("video");
+  featureVideo.className = "case-feature-video";
+  featureVideo.src = currentCase.video;
+  featureVideo.poster = currentCase.image;
+  featureVideo.autoplay = true;
+  featureVideo.muted = true;
+  featureVideo.loop = true;
+  featureVideo.playsInline = true;
+  featureVideo.setAttribute("aria-label", `${currentCase.label} showreel`);
+  feature.before(featureVideo);
+  feature.closest(".case-feature").classList.add("has-video");
+}
+
 function showImage(source, activeIndex) {
+  // Thumbnail 01 is the lead slot: it shows the video when the case has one.
+  const showVideo = Boolean(featureVideo) && activeIndex === 0;
+
+  if (featureVideo) {
+    featureVideo.hidden = !showVideo;
+    if (showVideo) featureVideo.play().catch(() => {});
+    else featureVideo.pause();
+  }
+  feature.hidden = showVideo;
   feature.src = source;
   feature.alt = `${currentCase.label} project image`;
   thumbnailRail.querySelectorAll("button").forEach((button, index) => {
