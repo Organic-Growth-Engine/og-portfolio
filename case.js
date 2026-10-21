@@ -156,31 +156,81 @@ const mediaPortfolioCategories = [
     id: "universities",
     title: "Universities",
     description: "Campus life, student communities, and milestone moments.",
+    items: [],
   },
   {
     id: "events-fests",
     title: "Events & Fests",
     description: "Stages, crowds, performances, and the energy of live events.",
+    items: [
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/The%20House%20of%20Coconut%20-%20The%20Grub%20Fest%20-%20Reel%202.mp4",
+        orientation: "portrait",
+        alt: "The House of Coconut - The Grub Fest",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Antrix%20Resorts%20-%20Rishikesh%20-%20Reel%2002.mp4",
+        orientation: "portrait",
+        alt: "Antrix Resorts, Rishikesh",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Jagran_3.mp4",
+        orientation: "landscape",
+        alt: "Jagran event",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/UNIFEST.mp4",
+        orientation: "landscape",
+        alt: "University fest",
+      },
+    ],
   },
   {
     id: "corporate",
     title: "Corporate",
     description: "The people, spaces, and moments behind organizations.",
+    items: [
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/ChargeZone%20Expo.mp4",
+        orientation: "landscape",
+        alt: "ChargeZone Expo",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Tj%20Diwali%20Party%2002_3.mp4",
+        orientation: "landscape",
+        alt: "TJ Diwali Party",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Holi%20Party%20-%20SISL.mp4",
+        orientation: "landscape",
+        alt: "Holi Party - SISL",
+      },
+    ],
   },
   {
     id: "automotive",
     title: "Automotive",
     description: "Vehicles photographed with an eye for design and detail.",
+    items: [],
   },
   {
     id: "portraits",
     title: "Portraits",
     description: "Personal portraits with character and presence.",
+    items: [],
   },
   {
     id: "product-shoots",
     title: "Product Shoots",
     description: "Product imagery focused on form, texture, and detail.",
+    items: [],
   },
 ];
 
@@ -249,15 +299,71 @@ if (mediaPortfolio && currentCase === cases.media) {
     const gallery = document.createElement("div");
     gallery.className = "media-portfolio-gallery";
 
-    mediaPortfolioSlots.forEach((slot) => {
-      const placeholder = document.createElement("figure");
-      placeholder.className = `media-portfolio-placeholder media-portfolio-placeholder--${slot.orientation}`;
-      placeholder.setAttribute("aria-label", slot.label);
+    const items = category.items.length ? category.items : mediaPortfolioSlots;
+    items.forEach((item) => {
+      const figure = document.createElement("figure");
+      figure.className = `media-portfolio-placeholder media-portfolio-placeholder--${item.orientation}`;
 
-      const placeholderText = document.createElement("span");
-      placeholderText.textContent = slot.label;
-      placeholder.append(placeholderText);
-      gallery.append(placeholder);
+      if (!category.items.length) {
+        figure.setAttribute("aria-label", item.label);
+        const placeholderText = document.createElement("span");
+        placeholderText.textContent = item.label;
+        figure.append(placeholderText);
+      } else if (item.type === "video") {
+        figure.classList.add("has-media");
+        const video = document.createElement("video");
+        video.controls = true;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.preload = "none";
+        video.playsInline = true;
+        video.setAttribute("aria-label", item.alt);
+        if (item.poster) video.poster = item.poster;
+        figure.append(video);
+
+        let videoIsVisible = false;
+
+        const playPortfolioVideo = () => {
+          if (!videoIsVisible || document.hidden) return;
+
+          if (video.getAttribute("src") !== item.src) {
+            video.src = item.src;
+            video.load();
+          }
+
+          video.play().catch((error) => {
+            if (error.name !== "AbortError" && !document.hidden) {
+              console.warn("A portfolio video could not start.", error);
+            }
+          });
+        };
+
+        const videoVisibility = new IntersectionObserver(
+          ([entry]) => {
+            videoIsVisible =
+              entry.isIntersecting && entry.intersectionRatio >= 0.5;
+            if (videoIsVisible) playPortfolioVideo();
+            else video.pause();
+          },
+          { threshold: 0.5 },
+        );
+        videoVisibility.observe(figure);
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) video.pause();
+          else playPortfolioVideo();
+        });
+      } else {
+        figure.classList.add("has-media");
+        const image = document.createElement("img");
+        image.src = item.src;
+        image.alt = item.alt;
+        image.loading = "lazy";
+        image.decoding = "async";
+        figure.append(image);
+      }
+
+      gallery.append(figure);
     });
 
     const controls = document.createElement("div");
@@ -320,12 +426,13 @@ let featureIsVisible = false;
 
 function playSelectedVideo() {
   if (!featureVideo || !selectedVideoSource) return;
-  if (!featureIsVisible || document.hidden) return;
 
   if (featureVideo.getAttribute("src") !== selectedVideoSource) {
     featureVideo.src = selectedVideoSource;
     featureVideo.load();
   }
+
+  if (!featureIsVisible || document.hidden) return;
 
   featureVideo.play().catch((error) => {
     if (error.name !== "AbortError" && !document.hidden) {
