@@ -12,6 +12,7 @@ const pages = [
 ];
 
 module.exports = defineConfig({
+  base: "/portfolio/",
   build: {
     rollupOptions: {
       input: Object.fromEntries(

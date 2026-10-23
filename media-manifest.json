@@ -1,0 +1,443 @@
+{
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/UNIFEST.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/unifest-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/unifest-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/ChargeZone%20Expo.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/chargezone-expo-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/chargezone-expo-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Addverb-Media.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/addverb-media-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/addverb-media-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Knotic+Vid+Main+Vid+-Media.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/knotic-vid-main-vid-media-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/knotic-vid-main-vid-media-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Viral+And+Servall+Podcast-Media.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/viral-and-servall-podcast-media-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/viral-and-servall-podcast-media-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Black+vigor.mov": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/black-vigor-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/black-vigor-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/The_last_final_final_final_render.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/the-last-final-final-final-render-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/the-last-final-final-final-render-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Opening%20Keynote.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/opening-keynote-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/opening-keynote-poster.jpg",
+    "width": 1728,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/UNIFEST.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/unifest-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/unifest-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Vikas%20Naagru%20And%20Nidhi%20Podcast%20Intro%20With%20Captions.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/vikas-naagru-and-nidhi-podcast-intro-with-captions-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/vikas-naagru-and-nidhi-podcast-intro-with-captions-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/PARIKSHIT%20ANOOOOP%20Intro.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/parikshit-anoooop-intro-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/parikshit-anoooop-intro-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/KRM-Media.webp": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/krm-media-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/krm-media-800.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Galgotias-Media.webp": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/galgotias-media-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/galgotias-media-800.webp",
+    "width": 1600,
+    "height": 982
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/NLU-Media.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nlu-media-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nlu-media-800.webp",
+    "width": 1000,
+    "height": 562
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/NLU.jpg.webp": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nlu-jpg-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nlu-jpg-800.webp",
+    "width": 1000,
+    "height": 667
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/The%20House%20of%20Coconut%20-%20The%20Grub%20Fest%20-%20Reel%202.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/the-house-of-coconut-the-grub-fest-reel-2-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/the-house-of-coconut-the-grub-fest-reel-2-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Antrix%20Resorts%20-%20Rishikesh%20-%20Reel%2002.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/antrix-resorts-rishikesh-reel-02-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/antrix-resorts-rishikesh-reel-02-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Jagran_3.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/jagran-3-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/jagran-3-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Aurobindo.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/aurobindo-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/aurobindo-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Tj%20Diwali%20Party%2002_3.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/tj-diwali-party-02-3-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/tj-diwali-party-02-3-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Holi%20Party%20-%20SISL.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/holi-party-sisl-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/holi-party-sisl-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Nothing.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nothing-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/nothing-800.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Auto-1.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-1-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-1-800.webp",
+    "width": 1600,
+    "height": 1230
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Auto-2.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-2-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-2-800.webp",
+    "width": 1600,
+    "height": 979
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Auto-3.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-3-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-3-800.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Auto-4.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-4-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-4-800.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Auto-5.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-5-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/auto-5-800.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-1.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-1-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-1-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-2.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-2-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-2-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-3.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-3-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-3-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-4.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-4-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-4-800.webp",
+    "width": 1600,
+    "height": 1067
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-5.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-5-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-5-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Portrait-6.JPG": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-6-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/portrait-6-800.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Product-1.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-1-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-1-800.webp",
+    "width": 1600,
+    "height": 1066
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Product-2.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-2-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-2-800.webp",
+    "width": 1600,
+    "height": 1066
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Product-3.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-3-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-3-800.webp",
+    "width": 1600,
+    "height": 1200
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Product-4.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-4-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-4-800.webp",
+    "width": 1600,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Product-5.jpg": {
+    "type": "image",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-5-1600.webp",
+    "small": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/product-5-800.webp",
+    "width": 1600,
+    "height": 1600
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/4.%20Talking%20head%20for%20UX%20anudeep.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/4-talking-head-for-ux-anudeep-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/4-talking-head-for-ux-anudeep-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Symbiotes%20Anudeep.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/symbiotes-anudeep-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/symbiotes-anudeep-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Video_2.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/video-2-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/video-2-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Crack%20UX%20Design%20Jobs.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/crack-ux-design-jobs-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/crack-ux-design-jobs-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Tale%20of%20Absinthe_1080p50.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/tale-of-absinthe-1080p50-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/tale-of-absinthe-1080p50-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Video-17420.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/video-17420-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/video-17420-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/TalkingHeads-1.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/talkingheads-1-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/talkingheads-1-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Devfest%202025%20venue%20reveal%20reel.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/devfest-2025-venue-reveal-reel-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/devfest-2025-venue-reveal-reel-poster.jpg",
+    "width": 720,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Google%20Cloud%20Community%20Days.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/google-cloud-community-days-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/google-cloud-community-days-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/scan2Card.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/scan2card-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/scan2card-poster.jpg",
+    "width": 720,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Copy%20of%20The%20House%20of%20Coconut%20-%20The%20Grub%20Fest%20-%20Reel%202.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/copy-of-the-house-of-coconut-the-grub-fest-reel-2-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/copy-of-the-house-of-coconut-the-grub-fest-reel-2-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Knotic%20Vid%20Main%20Vid%20V2.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/knotic-vid-main-vid-v2-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/knotic-vid-main-vid-v2-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Google%20Devfest%202024.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/google-devfest-2024-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/google-devfest-2024-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Events-1.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/events-1-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/events-1-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Recap%20reel%20final_1080p.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/recap-reel-final-1080p-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/recap-reel-final-1080p-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/RITHVIK%20SHARVI1.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/rithvik-sharvi1-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/rithvik-sharvi1-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Symbiotes%20Video%201.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/symbiotes-video-1-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/symbiotes-video-1-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Abhishek%20Kar%20Podcast%20Intro.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/abhishek-kar-podcast-intro-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/abhishek-kar-podcast-intro-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Deepak%20Dhaiya%20Podcast.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/deepak-dhaiya-podcast-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/deepak-dhaiya-podcast-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Vikas%20Naagru%20and%20Shatkashi%20Podcast%20With%20Name%20Correction.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/vikas-naagru-and-shatkashi-podcast-with-name-correction-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/vikas-naagru-and-shatkashi-podcast-with-name-correction-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Viral%20And%20Servall%20Podcast.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/viral-and-servall-podcast-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/viral-and-servall-podcast-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Jas%20Karan%20With%20Correction.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/jas-karan-with-correction-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/jas-karan-with-correction-poster.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Catalina%20Banquet%20Hall%20-%20Ad%20Reel.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/catalina-banquet-hall-ad-reel-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/catalina-banquet-hall-ad-reel-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/lv_0_20260411135118.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/lv-0-20260411135118-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/lv-0-20260411135118-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/videos/Billiard%20ADS.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/billiard-ads-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/billiard-ads-poster.jpg",
+    "width": 1280,
+    "height": 720
+  }
+}
