@@ -52,7 +52,7 @@ body {
 
 /* --- Custom Magnetic Cursor --- */
 @media (pointer: fine) {
-  body {
+  body:not(.detail-page) {
     cursor: none;
   }
 
@@ -106,7 +106,7 @@ body {
 /* --- Fullscreen Studio Landing Stage (100% Top to Bottom & Left to Right) --- */
 
 .studio-landing {
-  width: 100vw;
+  width: 100%;
   min-height: 100svh;
   height: 100vh;
   height: 100dvh;
@@ -439,7 +439,7 @@ body {
 .og-interlude-title {
   color: #07090d;
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(5rem, 13vw, 13rem);
+  font-size: clamp(3.5rem, 13vw, 13rem);
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 0.82;
@@ -553,43 +553,46 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: #000000;
+  background-color: #000000;
+  background-image: var(--brand-bg, none);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 960px) {
+  .brand-bg {
+    background-image: var(--brand-bg-small, var(--brand-bg, none));
+  }
 }
 
 #brand-section .brand-bg {
-  background-image: url("assets/optimized/Media-2-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/Media-2-feature.webp");
+  --brand-bg-small: url("assets/optimized/Media-2-feature-960.webp");
 }
 
 #editing-section .brand-bg {
-  background-image: url("assets/optimized/Editing-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/Editing-feature.webp");
+  --brand-bg-small: url("assets/optimized/Editing-feature-960.webp");
 }
 
 #smm-section .brand-bg {
-  background-image: url("assets/optimized/SMM-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/SMM-feature.webp");
+  --brand-bg-small: url("assets/optimized/SMM-feature-960.webp");
 }
 
 #performance-marketing-section .brand-bg {
-  background-image: url("assets/optimized/PM-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/PM-feature.webp");
+  --brand-bg-small: url("assets/optimized/PM-feature-960.webp");
 }
 
 #influencer-marketing-section .brand-bg {
-  background-image: url("assets/optimized/IM-2-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/IM-2-feature.webp");
+  --brand-bg-small: url("assets/optimized/IM-2-feature-960.webp");
 }
 
 #events-section .brand-bg {
-  background-image: url("assets/optimized/Events-feature.jpg");
-  background-position: center;
-  background-size: cover;
+  --brand-bg: url("assets/optimized/Events-feature.webp");
+  --brand-bg-small: url("assets/optimized/Events-feature-960.webp");
 }
 
 .brand-bg-img {
@@ -737,8 +740,9 @@ body {
 
 .case-landing {
   position: relative;
-  min-height: 100svh;
   height: 100vh;
+  height: 100svh;
+  min-height: 30rem;
   overflow: hidden;
   background: #777;
   color: #ffffff;
@@ -838,11 +842,13 @@ body {
   z-index: 1;
   color: #ffffff;
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(5rem, 15vw, 16rem);
+  font-size: clamp(3.5rem, min(15vw, 30svh), 16rem);
   font-weight: 400;
   letter-spacing: 0.025em;
   line-height: 0.8;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .case-header {
@@ -880,6 +886,9 @@ body {
   grid-template-rows: 1fr auto;
   gap: clamp(1.25rem, 3vw, 3.5rem);
   padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem) 1.5rem;
+  width: 100%;
+  max-width: 120rem;
+  margin-inline: auto;
 }
 
 .case-story {
@@ -1027,11 +1036,13 @@ body {
   font-size: 0.65rem;
 }
 
-.case-thumb img {
+.case-thumb img,
+.case-thumb video {
   width: 100%;
   aspect-ratio: 1.4 / 1;
   display: block;
   object-fit: cover;
+  background: #101010;
   opacity: 0.55;
   filter: grayscale(1);
   transition:
@@ -1041,8 +1052,11 @@ body {
 }
 
 .case-thumb.is-active img,
+.case-thumb.is-active video,
 .case-thumb:hover img,
-.case-thumb:focus-visible img {
+.case-thumb:hover video,
+.case-thumb:focus-visible img,
+.case-thumb:focus-visible video {
   opacity: 1;
   filter: grayscale(0);
   outline: 1px solid rgba(255, 255, 255, 0.75);
@@ -1076,6 +1090,11 @@ body {
 .media-portfolio {
   padding: clamp(4rem, 10vw, 9rem) clamp(1rem, 4vw, 4rem);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.media-portfolio > * {
+  max-width: 120rem;
+  margin-inline: auto;
 }
 
 .media-portfolio-header {
@@ -1206,6 +1225,15 @@ body {
   display: none;
 }
 
+.media-portfolio-gallery:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 6px;
+}
+
+.media-portfolio-controls[hidden] {
+  display: none;
+}
+
 .media-portfolio-placeholder {
   position: relative;
   flex: 0 0 auto;
@@ -1255,11 +1283,68 @@ body {
 
 .media-portfolio-placeholder > img {
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.media-portfolio-placeholder.is-loaded > img {
+  opacity: 1;
+}
+
+.media-portfolio-placeholder.is-loading::before,
+.case-feature.is-loading::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: media-shimmer 1.4s linear infinite;
+}
+
+.media-portfolio-placeholder.is-unavailable::before {
+  display: none;
+}
+
+@keyframes media-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -150% 0;
+  }
+}
+
+.media-unavailable {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.media-portfolio-placeholder.is-unavailable > video {
+  display: none;
+}
+
+.media-portfolio-placeholder.has-media > .media-unavailable {
+  display: block;
 }
 
 .media-portfolio-placeholder > video {
   object-fit: contain;
   background: #000000;
+}
+
+.media-portfolio-placeholder--portrait > video {
+  object-fit: cover;
 }
 
 .media-portfolio-placeholder.has-media > span {
@@ -1281,7 +1366,7 @@ body {
   }
 
   .case-landing-title {
-    font-size: clamp(4rem, 17vw, 8rem);
+    font-size: clamp(3.25rem, min(17vw, 26svh), 8rem);
   }
 
   .case-shell {
@@ -1305,7 +1390,69 @@ body {
   }
 
   .media-portfolio-placeholder {
-    height: clamp(15rem, 65vw, 22rem);
+    height: auto;
+  }
+
+  .media-portfolio-placeholder--landscape {
+    width: min(86vw, 34rem);
+  }
+
+  .media-portfolio-placeholder--portrait {
+    width: min(64vw, 20rem);
+  }
+
+  .media-portfolio-category {
+    column-gap: 1rem;
+  }
+
+  .media-portfolio-category-heading h3 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .case-feature-caption {
+    gap: 1rem;
+  }
+
+  .case-quote {
+    max-width: 11rem;
+  }
+
+  .case-footer {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .case-landing-top > span {
+    display: none;
+  }
+
+  .case-landing-description {
+    width: auto;
+    left: 1rem;
+  }
+
+  .case-feature-caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .case-quote {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+/* Short screens (phones held sideways): keep tiles inside the view. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .media-portfolio-placeholder {
+    height: 70svh;
+    width: auto;
+  }
+
+  .case-landing-description {
+    top: 4.5rem;
   }
 }
 
@@ -1511,5 +1658,20 @@ body {
 
   .og-footer-mark {
     width: min(78vw, 22rem);
+  }
+}
+
+/* People who ask for less motion get instant scrolling and no shimmer. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
