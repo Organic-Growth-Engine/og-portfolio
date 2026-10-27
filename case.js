@@ -153,7 +153,7 @@ const cases = {
     ],
   },
   events: {
-    label: "Events",
+    label: "Web Experiences",
     index: "06 / 06",
     eyebrow: "Live experiences",
     description:
