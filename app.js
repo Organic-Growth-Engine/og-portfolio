@@ -1,3 +1,4 @@
+import { initSignupForm } from "./media-leads.js";
 import { animate, scroll } from "motion";
 
 /**
@@ -159,60 +160,3 @@ function initLiveClock() {
   setInterval(tick, 1000);
 }
 
-/* --- Footer Email Sign-up --- */
-// Paste a form service URL here (e.g. Formspree, Mailchimp, ConvertKit) to
-// start collecting emails. It receives a JSON POST: { "email": "..." }.
-const SIGNUP_ENDPOINT = "";
-
-function initSignupForm() {
-  const form = document.querySelector("[data-signup-form]");
-  if (!form) return;
-
-  const input = form.querySelector("input[type='email']");
-  const button = form.querySelector("button");
-  const status = form.querySelector("[data-signup-status]");
-
-  const showStatus = (message, isError = false) => {
-    status.textContent = message;
-    status.classList.toggle("is-error", isError);
-  };
-
-  input.addEventListener("input", () => {
-    input.removeAttribute("aria-invalid");
-    if (status.classList.contains("is-error")) showStatus("");
-  });
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const email = input.value.trim();
-
-    if (!input.checkValidity() || !email) {
-      input.setAttribute("aria-invalid", "true");
-      showStatus("Please enter a valid email address.", true);
-      input.focus();
-      return;
-    }
-
-    if (!SIGNUP_ENDPOINT) {
-      showStatus("Sign-ups open soon. Thanks for your interest!");
-      return;
-    }
-
-    button.disabled = true;
-    showStatus("Signing you up…");
-    try {
-      const response = await fetch(SIGNUP_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      form.reset();
-      showStatus("You're on the list. Talk soon.");
-    } catch {
-      showStatus("Couldn't sign you up just now. Please try again.", true);
-    } finally {
-      button.disabled = false;
-    }
-  });
-}
