@@ -6,22 +6,22 @@ Portfolio website for OG Engine showcasing creative work across media, video edi
 
 ```text
 og-portfolio/
-��� index.html                   # Home page
-��� editing.html                 # Video editing page
-��� events.html                  # Events page
-��� influencer-marketing.html    # Influencer marketing page
-��� media.html                   # Media projects page
-��� performance-marketing.html   # Performance marketing page
-��� smm.html                     # Social media management page
-��� app.js                       # Logic for home page (animations, cursor, scroll)
-��� case.js                      # Logic for case study pages (renders videos & content)
-��� style.css                    # Main stylesheet
-��� media-manifest.json          # Manifest mapping media URLs to optimized versions
-��� vite.config.js               # Vite configuration and build setup
-��� assets/                      # Static logos and images
-�   ��� optimized/               # Optimized WebP images
-��� scripts/
-    ��� optimize-media.mjs       # Script to compress videos and images
+├── index.html                   # Home page
+├── editing.html                 # Video editing page
+├── events.html                  # Events page
+├── influencer-marketing.html    # Influencer marketing page
+├── media.html                   # Media projects page
+├── performance-marketing.html   # Performance marketing page
+├── smm.html                     # Social media management page
+├── app.js                       # Logic for home page (animations, cursor, scroll)
+├── case.js                      # Logic for case study pages (renders videos & content)
+├── style.css                    # Main stylesheet
+├── media-manifest.json          # Manifest mapping media URLs to optimized versions
+├── vite.config.js               # Vite configuration and build setup
+├── assets/                      # Static logos and images
+│   └── optimized/               # Optimized WebP images
+└── scripts/
+    └── optimize-media.mjs       # Script to compress videos and images
 ```
 
 ## Important Files
@@ -51,7 +51,6 @@ npm run dev
 ```bash
 npm run build
 ```
-
 
 ## Portfolio email signups
 
