@@ -52,7 +52,7 @@ function initSectionLinks() {
   });
 }
 
-/* --- Pinned Section Gallery --- */
+/* --- Pinned Section Gallery (desktop only; mobile scrolls vertically) --- */
 function initPinnedSections() {
   const stack = document.querySelector(".sections-stack");
   const track = document.querySelector(".sections-track");
@@ -60,12 +60,27 @@ function initPinnedSections() {
 
   if (!stack || !track || !panels.length) return;
 
-  scroll(
-    animate(track, {
+  const mobile = window.matchMedia("(max-width: 768px)");
+  let animation = null;
+  let stop = null;
+
+  function setup() {
+    if (stop) stop();
+    if (animation) animation.cancel();
+    stop = null;
+    animation = null;
+    track.style.transform = "";
+
+    if (mobile.matches) return;
+
+    animation = animate(track, {
       transform: ["none", `translateX(-${(panels.length - 1) * 100}vw)`],
-    }),
-    { target: stack },
-  );
+    });
+    stop = scroll(animation, { target: stack });
+  }
+
+  setup();
+  mobile.addEventListener("change", setup);
 }
 
 /* --- Custom Magnetic Cursor --- */

@@ -1970,3 +1970,33 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ==========================================================================
+   MOBILE: panels stack vertically and scroll top to bottom
+   (desktop keeps the pinned horizontal scroll)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .sections-stack {
+    height: auto;
+  }
+
+  .sections-pinned {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sections-track {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+  }
+
+  .brand-section {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+  }
+}
