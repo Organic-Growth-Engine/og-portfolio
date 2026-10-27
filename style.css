@@ -813,10 +813,92 @@ body {
   width: 2.2rem;
   height: 2.2rem;
   border: 0;
+  cursor: pointer;
   background: #ffffff;
   color: #07090d;
   font-size: 1rem;
   line-height: 1;
+}
+
+.case-menu-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(2rem, 8vh, 5rem);
+  padding: clamp(1.5rem, 5vw, 4rem);
+  overflow-y: auto;
+  background: rgba(5, 5, 5, 0.97);
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.case-menu-panel[hidden] {
+  display: none;
+}
+
+.case-menu-header {
+  width: min(100%, 42rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.case-menu-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-menu-close {
+  padding: 0.5rem 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-menu-links {
+  width: min(100%, 42rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vh, 1.25rem);
+  margin: auto 0;
+}
+
+.case-menu-links a {
+  color: #ffffff;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.case-menu-links a:hover,
+.case-menu-links a:focus-visible {
+  color: var(--footer-accent, #d7e6fa);
+}
+
+.case-menu:focus-visible,
+.case-menu-close:focus-visible,
+.case-menu-links a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 5px;
 }
 
 .case-landing-description {
@@ -1359,14 +1441,42 @@ body {
 }
 
 @media (max-width: 760px) {
-  .case-landing-description {
-    top: 7rem;
-    right: 1rem;
-    width: min(20rem, 68vw);
+  /* Phones: logo left, menu right, then title with the description under it. */
+  .case-landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0 1rem clamp(2rem, 8vw, 3rem);
+  }
+
+  .case-landing-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .case-landing-top > span {
+    display: none;
   }
 
   .case-landing-title {
+    position: relative;
+    inset: auto;
+    order: 1;
     font-size: clamp(3.25rem, min(17vw, 26svh), 8rem);
+  }
+
+  .case-landing-description {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: auto;
+    max-width: 24rem;
+  }
+
+  /* The landing already shows the logo and page name. */
+  .case-header {
+    display: none;
   }
 
   .case-shell {
@@ -1375,13 +1485,13 @@ body {
     grid-template-rows: auto auto auto;
   }
 
-  .case-feature {
+  .case-story {
     grid-row: 1;
-    min-height: 18rem;
   }
 
-  .case-story {
+  .case-feature {
     grid-row: 2;
+    min-height: 0;
   }
 
   .case-thumbnails {
@@ -1424,15 +1534,6 @@ body {
 }
 
 @media (max-width: 420px) {
-  .case-landing-top > span {
-    display: none;
-  }
-
-  .case-landing-description {
-    width: auto;
-    left: 1rem;
-  }
-
   .case-feature-caption {
     flex-direction: column;
     align-items: flex-start;
@@ -1445,7 +1546,7 @@ body {
 }
 
 /* Short screens (phones held sideways): keep tiles inside the view. */
-@media (max-height: 520px) and (orientation: landscape) {
+@media (max-height: 520px) and (orientation: landscape) and (min-width: 761px) {
   .media-portfolio-placeholder {
     height: 70svh;
     width: auto;
@@ -1487,6 +1588,16 @@ body {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* ==========================================================================
   OG Engine Footer — Cool chrome identity panel
    ========================================================================== */
@@ -1496,7 +1607,7 @@ body {
   z-index: 3;
   width: 100%;
   margin: 0;
-  height: clamp(500px, 57vw, 760px);
+  min-height: clamp(500px, 57vw, 760px);
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -1627,6 +1738,190 @@ body {
   color: var(--footer-accent);
   text-shadow: 0 0 16px var(--footer-accent-glow);
   line-height: 1.35;
+}
+
+/* --- Footer contact & sign-up --- */
+.og-contact {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid rgba(215, 230, 250, 0.12);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.og-contact-kicker,
+.og-contact-col-title {
+  color: rgba(215, 230, 250, 0.58);
+  font-size: clamp(0.68rem, 0.8vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.og-contact-title {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.og-contact-text {
+  max-width: 26rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  line-height: 1.6;
+}
+
+.og-contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+  max-width: 34rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.og-contact-input {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 3.25rem;
+  padding: 0 1.4rem;
+  border: 1px solid rgba(215, 230, 250, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font: inherit;
+  font-size: 1rem; /* 16px stops iOS from zooming in on focus */
+  user-select: text;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.og-contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.og-contact-input:focus-visible {
+  outline: none;
+  border-color: var(--footer-accent);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.og-contact-input[aria-invalid="true"] {
+  border-color: rgba(255, 150, 150, 0.7);
+}
+
+/* Round "send" button with an arrow. */
+.og-contact-button {
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--footer-accent);
+  color: #07090d;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.og-contact-button svg {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.og-contact-button:hover,
+.og-contact-button:focus-visible {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.og-contact-button:hover svg,
+.og-contact-button:focus-visible svg {
+  transform: translateX(3px);
+}
+
+.og-contact-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.og-contact-button:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.og-contact-status {
+  flex-basis: 100%;
+  min-height: 1.2em;
+  color: rgba(215, 230, 250, 0.75);
+  font-size: 0.8rem;
+}
+
+.og-contact-status.is-error {
+  color: rgba(255, 170, 170, 0.9);
+}
+
+.og-contact-links {
+  display: flex;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.og-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.og-contact-col-title {
+  margin-bottom: 0.4rem;
+}
+
+.og-contact-col a {
+  position: relative;
+  width: fit-content;
+  color: #ffffff;
+  font-size: clamp(0.78rem, 0.9vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.og-contact-col a::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.og-contact-col a:hover::after,
+.og-contact-col a:focus-visible::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .og-contact {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
