@@ -30,6 +30,22 @@ const smallFeatureImages = {
 };
 
 
+/* --- Videos stored in this project ----------------------------------------
+   public/influencer/ holds the Influencer Marketing videos (already web-sized,
+   720p) and a "<name>-poster.jpg" thumbnail next to each. Vite serves public/
+   at the site's base path (/portfolio/) and copies it into the build. */
+const LOCAL_VIDEO_DIR = `${import.meta.env.BASE_URL}influencer/`;
+const localVideos = new Map(); // video URL -> { poster, width, height }
+
+// Returns the URL of public/influencer/<name>.mp4 and registers its poster
+// and size (most are 720×1280 phone reels).
+function localVideo(name, { width = 720, height = 1280 } = {}) {
+  const src = `${LOCAL_VIDEO_DIR}${name}.mp4`;
+  const poster = `${LOCAL_VIDEO_DIR}${name}-poster.jpg`;
+  localVideos.set(src, { type: "video", src, poster, width, height });
+  return src;
+}
+
 const cases = {
   media: {
     label: "Media",
@@ -138,22 +154,93 @@ const cases = {
     description:
       "We build credible creator partnerships that let good ideas travel through trusted voices.",
     headline: "Trust travels through people",
-    quote:
-      "OGMedia found the people who could carry the idea naturally, without losing what made it ours.",
-    person: "Iris Cole",
-    role: "Marketing Director",
     image: influencerImage,
-    thumbs: [
-      kinfolkImage,
-      aethelImage,
-      somaImage,
-      luminaImage,
-      veloxImage,
-      mediaThumbnail,
+    // Client works: one box each. Clicking a box plays its video in the big
+    // frame and shows the client's name, category and services in it.
+    // Add up to 6, in the order they should appear, each like:
+    //   client:   "Company name"
+    //   category: "Short line about the work"
+    //   services: ["Service one", "Service two"]
+    //   video:    localVideo("file-name")  (public/influencer/file-name.mp4)
+    //   focus:    optional. Tall reels are cropped to fill the wide frame;
+    //             this picks which part stays in view: "0%" = the top,
+    //             "50%" = the middle. Default "30%" (set in style.css).
+    works: [
+      {
+        client: "Budget Bar",
+        category: "High-Energy Nightlife Marketing",
+        services: [
+          "Nightlife & Event Photography",
+          "Social Media Management (Instagram, Snapchat)",
+          "Influencer & Promoter Collaborations",
+          "Event Campaign Execution",
+        ],
+        video: localVideo("budget-bar"),
+        focus: "25%",
+      },
+      {
+        client: "Finns Cafe & Dine",
+        category: "Vibrant Cafe & Dining Experience",
+        services: [
+          "Food & Lifestyle Photography",
+          "Social Media Management (Instagram, Facebook)",
+          "Video Reel Production",
+          "Influencer Marketing",
+        ],
+        video: localVideo("finns-cafe-and-dine"),
+        focus: "40%",
+      },
+      {
+        client: "Bluva",
+        category: "Premium Packaged Drinking Water",
+        services: [
+          "Product & Lifestyle Photography",
+          "Social Media Management (Instagram, LinkedIn)",
+          "High-End Commercial Video Production",
+          "Brand Positioning Strategy",
+        ],
+        video: localVideo("bluva"),
+      },
+      {
+        client: "Girls Flavour",
+        category: "Creative Fashion Content & Branding",
+        services: [
+          "Fashion Content Creation",
+          "Brand Identity Enhancement",
+          "Creative Photoshoots",
+          "Audience Engagement Strategy",
+        ],
+        video: localVideo("girls-flavour"),
+        focus: "45%",
+      },
+      {
+        client: "Cafe Lumos",
+        category: "Gen Z Focused Marketing Campaign",
+        services: [
+          "Content Creation",
+          "Social Media Management (Instagram, WhatsApp)",
+          "Influencer Marketing",
+          "Zomato & Swiggy Reviews",
+          "Events & Campaigns Planning & Execution",
+        ],
+        video: localVideo("cafe-lumos"),
+        focus: "20%",
+      },
+      {
+        client: "Adige Dosa House",
+        category: "Authentic South Indian Cuisine Branding",
+        services: [
+          "Food & Ambiance Photography",
+          "Social Media Management (Instagram, Facebook)",
+          "Local SEO & Google My Business",
+          "Zomato & Swiggy Optimization",
+        ],
+        video: localVideo("adige-dosa-house"),
+      },
     ],
   },
   events: {
-    label: "Events",
+    label: "Web Experiences",
     index: "06 / 06",
     eyebrow: "Live experiences",
     description:
@@ -176,6 +263,16 @@ const cases = {
 };
 
 const currentCase = cases[document.body.dataset.case] || cases.media;
+
+// What the feature frame and thumbnail rail show. A case either lists client
+// `works` (a video + client details each) or separate `videos` and `thumbs`.
+const works = currentCase.works || [];
+const caseVideos = works.length
+  ? works.map((work) => work.video)
+  : currentCase.videos || [];
+const caseThumbs = works.length
+  ? works.map(() => currentCase.image) // shown if a work's video can't load
+  : currentCase.thumbs;
 
 const mediaPortfolioCategories = [
   {
@@ -644,6 +741,68 @@ const editingPortfolioCategories = [
   },
 ];
 
+// "More of our work" on the Influencer Marketing page: the works beyond the
+// six in the main row. Same format as the Editing categories above (the
+// section hides itself if this list is ever empty).
+const influencerPortfolioCategories = [
+  {
+    id: "restaurants-cafes",
+    title: "Restaurants & Cafes",
+    description: "Dining, cafe and nightlife campaigns brought to life by creators.",
+    items: [
+      {
+        type: "video",
+        src: localVideo("cinnamon-courtyard"),
+        orientation: "portrait",
+        alt: "Cinnamon Courtyard — Elegant Dining & Ambience",
+      },
+      {
+        type: "video",
+        src: localVideo("nior-cafe"),
+        orientation: "portrait",
+        alt: "Nior Cafe — Marketing & PR Campaign",
+      },
+      {
+        type: "video",
+        src: localVideo("lord-of-foods"),
+        orientation: "portrait",
+        alt: "Lord of Foods — Dynamic Restaurant & Cloud Kitchen Marketing",
+      },
+      {
+        type: "video",
+        src: localVideo("cinnamon-kitchen"),
+        orientation: "portrait",
+        alt: "Cinnamon Kitchen — Healthy & Gluten-Free Bakery Branding",
+      },
+      {
+        type: "video",
+        src: localVideo("hovv-patio-and-farm", { width: 360, height: 640 }),
+        orientation: "portrait",
+        alt: "Hovv Patio & Farm — Marketing & PR Strategy",
+      },
+    ],
+  },
+  {
+    id: "brands-studios",
+    title: "Brands & Studios",
+    description: "Brand building and content for studios and lifestyle brands.",
+    items: [
+      {
+        type: "video",
+        src: localVideo("doshi-design-studio"),
+        orientation: "portrait",
+        alt: "Doshi Design Studio — Brand Building & Portfolio Showcase",
+      },
+      {
+        type: "video",
+        src: localVideo("jain-life", { width: 360, height: 640 }),
+        orientation: "portrait",
+        alt: "Jain Life — Content Creation & Brand Identity",
+      },
+    ],
+  },
+];
+
 
 /* ==========================================================================
    Media loading
@@ -663,7 +822,7 @@ const isSlowConnection =
 const allowAutoplay = !prefersReducedMotion && !isSlowConnection;
 
 function resolveMedia(src) {
-  const entry = mediaManifest[src];
+  const entry = mediaManifest[src] || localVideos.get(src);
   return {
     src: entry?.src || src,
     original: src,
@@ -887,7 +1046,7 @@ function renderPortfolioImage(figure, item) {
 
 function setText(selector, text) {
   const element = document.querySelector(selector);
-  if (element) element.textContent = text;
+  if (element) element.textContent = text ?? "";
 }
 
 document.title = `${currentCase.label} | OGMedia`;
@@ -907,15 +1066,18 @@ const featureFrame = feature?.closest(".case-feature");
 const hero = document.querySelector("[data-case-hero]");
 const thumbnailRail = document.querySelector("[data-case-thumbnails]");
 
-/* --- Portfolio categories (Media & Editing pages) --- */
+/* --- Portfolio categories (Media, Editing & Influencer Marketing pages) --- */
 
 const mediaPortfolio = document.querySelector("[data-media-portfolio]");
-const portfolioCategories =
-  currentCase === cases.media
-    ? mediaPortfolioCategories
-    : currentCase === cases.editing
-      ? editingPortfolioCategories
-      : [];
+const portfolioCategoriesByCase = new Map([
+  [cases.media, mediaPortfolioCategories],
+  [cases.editing, editingPortfolioCategories],
+  [cases.influencer, influencerPortfolioCategories],
+]);
+const portfolioCategories = portfolioCategoriesByCase.get(currentCase) || [];
+
+// Nothing to show yet: hide the whole section, heading included.
+if (mediaPortfolio) mediaPortfolio.hidden = !portfolioCategories.length;
 
 const galleryControlUpdaters = new Map();
 const galleryResizeObserver = new ResizeObserver((entries) => {
@@ -1127,7 +1289,15 @@ let featurePlayer = null;
 let featureIsVisible = false;
 let activeThumbIndex = 0;
 
-if (feature && featureFrame && currentCase.videos?.some(Boolean)) {
+// Tall videos (phone reels) fill the wide 16:9 frame edge to edge, like the
+// wide videos on the Editing page; style.css crops them (.is-portrait).
+// Wide videos are shown whole, as before. Pass 0, 0 for a still image.
+function markTallVideo(width, height) {
+  const isTall = Boolean(width && height && height > width);
+  featureFrame.classList.toggle("is-portrait", isTall);
+}
+
+if (feature && featureFrame && caseVideos.some(Boolean)) {
   featurePlayer = createPlayer({
     frame: featureFrame,
     label: `${currentCase.label} showreel`,
@@ -1138,10 +1308,16 @@ if (feature && featureFrame && currentCase.videos?.some(Boolean)) {
     onFail: () => {
       featurePlayer.video.hidden = true;
       feature.hidden = false;
+      markTallVideo(0, 0);
     },
   });
   feature.before(featurePlayer.video);
   featureFrame.classList.add("has-video");
+  // Videos without a known size: check once the video reports it.
+  featurePlayer.video.addEventListener("loadedmetadata", () => {
+    const { videoWidth, videoHeight } = featurePlayer.video;
+    markTallVideo(videoWidth, videoHeight);
+  });
 
   onView(featureFrame, (entry) => {
     featureIsVisible = entry.isIntersecting;
@@ -1151,21 +1327,46 @@ if (feature && featureFrame && currentCase.videos?.some(Boolean)) {
   });
 }
 
+// Client works: show the selected client's name, category and services in the
+// feature caption (influencer-marketing.html has the services list).
+const servicesList = document.querySelector("[data-case-services]");
+
+function showWorkDetails(work) {
+  setText("[data-case-person]", work.client);
+  setText("[data-case-role]", work.category);
+  servicesList?.replaceChildren(
+    ...work.services.map((service) => {
+      const item = document.createElement("li");
+      item.textContent = service;
+      return item;
+    }),
+  );
+}
+
 function showItem(source, activeIndex, { userChose = false } = {}) {
   activeThumbIndex = activeIndex;
-  const videoSource = currentCase.videos?.[activeIndex];
+  const videoSource = caseVideos[activeIndex];
+  const work = works[activeIndex];
+  if (work) showWorkDetails(work);
   const showVideo = Boolean(featurePlayer && videoSource);
 
   if (featurePlayer) {
     featurePlayer.pause();
     featurePlayer.video.hidden = !showVideo;
     if (showVideo) {
-      featurePlayer.setMedia(resolveMedia(videoSource));
+      const media = resolveMedia(videoSource);
+      featurePlayer.setMedia(media);
+      markTallVideo(media.width, media.height);
+      // Which part of a cropped tall video stays in view (work.focus).
+      if (work?.focus) featureFrame.style.setProperty("--video-focus", work.focus);
+      else featureFrame.style.removeProperty("--video-focus");
       if (featureIsVisible) {
         featurePlayer.prime();
         // A click is a clear request to watch, even when autoplay is off.
         if (allowAutoplay || userChose) featurePlayer.play();
       }
+    } else {
+      markTallVideo(0, 0); // a still image
     }
   }
 
@@ -1173,7 +1374,7 @@ function showItem(source, activeIndex, { userChose = false } = {}) {
     feature.hidden = showVideo;
     feature.decoding = "async";
     feature.src = source;
-    feature.alt = `${currentCase.label} project image`;
+    feature.alt = work ? work.client : `${currentCase.label} project image`;
   }
 
   thumbnailRail?.querySelectorAll("button").forEach((button, index) => {
@@ -1223,18 +1424,21 @@ function createVideoThumbnail(videoSource, fallbackImage) {
   return video;
 }
 
-currentCase.thumbs.forEach((source, index) => {
+caseThumbs.forEach((source, index) => {
+  const number = String(index + 1).padStart(2, "0");
   const button = document.createElement("button");
   button.type = "button";
   button.className = "case-thumb";
   button.setAttribute(
     "aria-label",
-    `Show ${currentCase.label} work ${String(index + 1).padStart(2, "0")}`,
+    works[index]
+      ? `Show ${works[index].client}`
+      : `Show ${currentCase.label} work ${number}`,
   );
-  const number = document.createElement("span");
-  number.textContent = String(index + 1).padStart(2, "0");
+  const numberLabel = document.createElement("span");
+  numberLabel.textContent = number;
 
-  const videoSource = currentCase.videos?.[index];
+  const videoSource = caseVideos[index];
   let thumbnail;
   if (videoSource) {
     thumbnail = createVideoThumbnail(videoSource, source);
@@ -1246,7 +1450,7 @@ currentCase.thumbs.forEach((source, index) => {
     thumbnail.decoding = "async";
   }
 
-  button.append(number, thumbnail);
+  button.append(numberLabel, thumbnail);
   button.addEventListener("click", () =>
     showItem(source, index, { userChose: true }),
   );
