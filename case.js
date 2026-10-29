@@ -1177,6 +1177,98 @@ if (mediaPortfolio && portfolioCategories.length) {
   });
 }
 
+function initCaseMenu() {
+  const menuButton = document.querySelector(".case-menu");
+  const thumbnailRail = document.querySelector("[data-case-thumbnails]");
+
+  if (!menuButton || !thumbnailRail) return;
+
+  const menu = document.createElement("nav");
+  menu.className = "case-menu-panel";
+  menu.id = "case-navigation";
+  menu.setAttribute("aria-label", "Page navigation");
+  menu.hidden = true;
+
+  const menuHeader = document.createElement("div");
+  menuHeader.className = "case-menu-header";
+
+  const menuTitle = document.createElement("p");
+  menuTitle.textContent = "Navigate";
+
+  const closeButton = document.createElement("button");
+  closeButton.className = "case-menu-close";
+  closeButton.type = "button";
+  closeButton.textContent = "Close";
+  closeButton.setAttribute("aria-label", "Close navigation menu");
+
+  const menuLinks = document.createElement("div");
+  menuLinks.className = "case-menu-links";
+
+  const links = [
+    { href: "#best-works", label: "Best Works" },
+    ...portfolioCategories.map((category) => ({
+      href: `#${category.id}`,
+      label: category.title,
+    })),
+    { href: "#contact", label: "Contact" },
+  ];
+
+  links.forEach(({ href, label }) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.textContent = label;
+    menuLinks.append(link);
+  });
+
+  menuHeader.append(menuTitle, closeButton);
+  menu.append(menuHeader, menuLinks);
+  document.body.append(menu);
+
+  thumbnailRail.id = "best-works";
+  thumbnailRail.setAttribute("aria-label", "Best Works");
+  menuButton.setAttribute("aria-controls", menu.id);
+  menuButton.setAttribute("aria-expanded", "false");
+
+  const closeMenu = () => {
+    menu.hidden = true;
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
+  };
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menu.hidden = isOpen;
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+    if (!isOpen) closeButton.focus();
+  });
+
+  closeButton.addEventListener("click", () => {
+    closeMenu();
+    menuButton.focus();
+  });
+
+  menu.addEventListener("click", (event) => {
+    if (event.target === menu) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+
+  menuLinks.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !menu.hidden) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+}
+
+initCaseMenu();
+
 /* --- Hero --- */
 
 if (hero) {
