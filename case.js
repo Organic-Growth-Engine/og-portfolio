@@ -3,13 +3,13 @@ import editingImage from "./assets/optimized/Editing-feature.webp";
 import socialImage from "./assets/optimized/SMM-feature.webp";
 import performanceImage from "./assets/optimized/PM-feature.webp";
 import influencerImage from "./assets/optimized/IM-2-feature.webp";
-import eventsImage from "./assets/optimized/Events-feature.webp";
+import webImage from "./assets/optimized/Web-feature.webp";
 import mediaFeatureSmall from "./assets/optimized/Media-2-feature-960.webp";
 import editingSmall from "./assets/optimized/Editing-feature-960.webp";
 import socialSmall from "./assets/optimized/SMM-feature-960.webp";
 import performanceSmall from "./assets/optimized/PM-feature-960.webp";
 import influencerSmall from "./assets/optimized/IM-2-feature-960.webp";
-import eventsSmall from "./assets/optimized/Events-feature-960.webp";
+import webSmall from "./assets/optimized/Web-feature-960.webp";
 import mediaThumbnail from "./assets/optimized/Media-2-thumb.webp";
 import editingThumbnail from "./assets/optimized/Editing-thumb.webp";
 import kinfolkImage from "./assets/optimized/project-kinfolk.webp";
@@ -26,25 +26,35 @@ const smallFeatureImages = {
   [socialImage]: socialSmall,
   [performanceImage]: performanceSmall,
   [influencerImage]: influencerSmall,
-  [eventsImage]: eventsSmall,
+  [webImage]: webSmall,
 };
 
 
-/* --- Videos stored in this project ----------------------------------------
-   public/influencer/ holds the Influencer Marketing videos (already web-sized,
-   720p) and a "<name>-poster.jpg" thumbnail next to each. Vite serves public/
-   at the site's base path (/portfolio/) and copies it into the build. */
-const LOCAL_VIDEO_DIR = `${import.meta.env.BASE_URL}influencer/`;
+/* --- Media stored in this project -----------------------------------------
+   public/ holds the client work media, one folder per page:
+     public/influencer/        Influencer Marketing videos (720×1280 reels)
+     public/web-experiences/   Web Experiences screenshots and videos
+   Every video has a "<name>-poster.jpg" thumbnail next to it. Vite serves
+   public/ at the site's base path (/portfolio/) and copies it into the build. */
+const PUBLIC_URL = import.meta.env.BASE_URL;
 const localVideos = new Map(); // video URL -> { poster, width, height }
 
-// Returns the URL of public/influencer/<name>.mp4 and registers its poster
-// and size (most are 720×1280 phone reels).
-function localVideo(name, { width = 720, height = 1280 } = {}) {
-  const src = `${LOCAL_VIDEO_DIR}${name}.mp4`;
-  const poster = `${LOCAL_VIDEO_DIR}${name}-poster.jpg`;
+// Returns the URL of public/<path>.mp4 and registers its poster and size.
+// The default size is a 720×1280 phone reel.
+function localVideo(path, { width = 720, height = 1280 } = {}) {
+  const src = `${PUBLIC_URL}${path}.mp4`;
+  const poster = `${PUBLIC_URL}${path}-poster.jpg`;
   localVideos.set(src, { type: "video", src, poster, width, height });
   return src;
 }
+
+// Returns the URL of an image in public/, e.g. "web-experiences/travplan.webp".
+function localImage(file) {
+  return `${PUBLIC_URL}${file}`;
+}
+
+// The Web Experiences videos are wide (16:9).
+const WIDE_VIDEO = { width: 1600, height: 900 };
 
 const cases = {
   media: {
@@ -161,7 +171,7 @@ const cases = {
     //   client:   "Company name"
     //   category: "Short line about the work"
     //   services: ["Service one", "Service two"]
-    //   video:    localVideo("file-name")  (public/influencer/file-name.mp4)
+    //   video:    localVideo("influencer/file-name")  (public/influencer/file-name.mp4)
     //   focus:    optional. Tall reels are cropped to fill the wide frame;
     //             this picks which part stays in view: "0%" = the top,
     //             "50%" = the middle. Default "30%" (set in style.css).
@@ -175,7 +185,7 @@ const cases = {
           "Influencer & Promoter Collaborations",
           "Event Campaign Execution",
         ],
-        video: localVideo("budget-bar"),
+        video: localVideo("influencer/budget-bar"),
         focus: "25%",
       },
       {
@@ -187,7 +197,7 @@ const cases = {
           "Video Reel Production",
           "Influencer Marketing",
         ],
-        video: localVideo("finns-cafe-and-dine"),
+        video: localVideo("influencer/finns-cafe-and-dine"),
         focus: "40%",
       },
       {
@@ -199,7 +209,7 @@ const cases = {
           "High-End Commercial Video Production",
           "Brand Positioning Strategy",
         ],
-        video: localVideo("bluva"),
+        video: localVideo("influencer/bluva"),
       },
       {
         client: "Girls Flavour",
@@ -210,7 +220,7 @@ const cases = {
           "Creative Photoshoots",
           "Audience Engagement Strategy",
         ],
-        video: localVideo("girls-flavour"),
+        video: localVideo("influencer/girls-flavour"),
         focus: "45%",
       },
       {
@@ -223,7 +233,7 @@ const cases = {
           "Zomato & Swiggy Reviews",
           "Events & Campaigns Planning & Execution",
         ],
-        video: localVideo("cafe-lumos"),
+        video: localVideo("influencer/cafe-lumos"),
         focus: "20%",
       },
       {
@@ -235,29 +245,74 @@ const cases = {
           "Local SEO & Google My Business",
           "Zomato & Swiggy Optimization",
         ],
-        video: localVideo("adige-dosa-house"),
+        video: localVideo("influencer/adige-dosa-house"),
       },
     ],
   },
-  events: {
+  web: {
     label: "Web Experiences",
     index: "06 / 06",
-    eyebrow: "Live experiences",
+    eyebrow: "Digital experiences",
     description:
-      "We create live moments that bring people closer to the ideas, brands, and worlds they care about.",
-    headline: "Make the moment stay",
-    quote:
-      "The event felt effortless in the room and unforgettable long after everyone went home.",
-    person: "Theo James",
-    role: "Experience Director",
-    image: eventsImage,
-    thumbs: [
-      aethelImage,
-      luminaImage,
-      somaImage,
-      kinfolkImage,
-      veloxImage,
-      editingThumbnail,
+      "We design and build websites that are easy to use and hard to forget.",
+    headline: "Built to be explored",
+    image: webImage,
+    // Projects: one box each. Clicking a box shows the project in the big
+    // frame with its name, type, a short description and a link to the site.
+    // Add up to 6, in the order they should appear, each like:
+    //   client:   "Project name"
+    //   category: "Type of website"
+    //   about:    "One or two sentences about the project"
+    //   link:     "https://..."  optional: shows a "Visit website" link
+    //   image:    localImage("web-experiences/file.webp")  16:9 screenshot
+    //   (or) video: localVideo("web-experiences/file", WIDE_VIDEO)
+    works: [
+      {
+        client: "Anaya Escapes",
+        category: "Travel / Tourism Website",
+        about:
+          "A travel agency curating personalized domestic and international trips designed for comfort, culture, and memorable experiences.",
+        link: "https://www.anayaescapes.com/",
+        image: localImage("web-experiences/anaya-escapes.webp"),
+      },
+      {
+        client: "Tranquility Lux",
+        category: "Wellness E-commerce Website",
+        about:
+          "An elegant e-commerce platform for wellness products, featuring a modern design that emphasizes tranquility and luxury. The site offers a seamless shopping experience with a focus on eco-friendly and sustainable products.",
+        link: "https://www.tranquilitylux.com/",
+        image: localImage("web-experiences/tranquility-lux.webp"),
+      },
+      {
+        client: "Navi Mudra",
+        category: "Finance CRM / SaaS Website",
+        about:
+          "A CRM platform built for financial service providers to manage leads, loan applications, and customer interactions efficiently.",
+        link: "https://www.navimudra.com/",
+        image: localImage("web-experiences/navi-mudra.webp"),
+      },
+      {
+        client: "Travelocity Tourism",
+        category: "Travel / Tourism Website",
+        about:
+          "A comprehensive travel platform offering personalized tour packages, hotel bookings, and travel advisory services for global explorers.",
+        image: localImage("web-experiences/travelocity-tourism.webp"),
+      },
+      {
+        client: "Travplan",
+        category: "Travel Planning Platform",
+        about:
+          "An intuitive travel planning tool that helps users create detailed itineraries and manage their travel schedules with ease.",
+        link: "https://www.travplan.in/",
+        image: localImage("web-experiences/travplan.webp"),
+      },
+      {
+        client: "Web Showreel",
+        category: "Restaurant Booking Website",
+        about:
+          "A walkthrough of a restaurant seating-plan website: the landing page, how it works, and pricing.",
+        video: localVideo("web-experiences/restaurant-booking-showreel", WIDE_VIDEO),
+      },
     ],
   },
 };
@@ -265,13 +320,15 @@ const cases = {
 const currentCase = cases[document.body.dataset.case] || cases.media;
 
 // What the feature frame and thumbnail rail show. A case either lists client
-// `works` (a video + client details each) or separate `videos` and `thumbs`.
+// `works` (a video or image + details each) or separate `videos` and `thumbs`.
 const works = currentCase.works || [];
 const caseVideos = works.length
   ? works.map((work) => work.video)
   : currentCase.videos || [];
+// Image works show their own image. For video works, the page image is the
+// fallback if the video can't load.
 const caseThumbs = works.length
-  ? works.map(() => currentCase.image) // shown if a work's video can't load
+  ? works.map((work) => work.image || currentCase.image)
   : currentCase.thumbs;
 
 const mediaPortfolioCategories = [
@@ -752,31 +809,31 @@ const influencerPortfolioCategories = [
     items: [
       {
         type: "video",
-        src: localVideo("cinnamon-courtyard"),
+        src: localVideo("influencer/cinnamon-courtyard"),
         orientation: "portrait",
         alt: "Cinnamon Courtyard — Elegant Dining & Ambience",
       },
       {
         type: "video",
-        src: localVideo("nior-cafe"),
+        src: localVideo("influencer/nior-cafe"),
         orientation: "portrait",
         alt: "Nior Cafe — Marketing & PR Campaign",
       },
       {
         type: "video",
-        src: localVideo("lord-of-foods"),
+        src: localVideo("influencer/lord-of-foods"),
         orientation: "portrait",
         alt: "Lord of Foods — Dynamic Restaurant & Cloud Kitchen Marketing",
       },
       {
         type: "video",
-        src: localVideo("cinnamon-kitchen"),
+        src: localVideo("influencer/cinnamon-kitchen"),
         orientation: "portrait",
         alt: "Cinnamon Kitchen — Healthy & Gluten-Free Bakery Branding",
       },
       {
         type: "video",
-        src: localVideo("hovv-patio-and-farm", { width: 360, height: 640 }),
+        src: localVideo("influencer/hovv-patio-and-farm", { width: 360, height: 640 }),
         orientation: "portrait",
         alt: "Hovv Patio & Farm — Marketing & PR Strategy",
       },
@@ -789,15 +846,88 @@ const influencerPortfolioCategories = [
     items: [
       {
         type: "video",
-        src: localVideo("doshi-design-studio"),
+        src: localVideo("influencer/doshi-design-studio"),
         orientation: "portrait",
         alt: "Doshi Design Studio — Brand Building & Portfolio Showcase",
       },
       {
         type: "video",
-        src: localVideo("jain-life", { width: 360, height: 640 }),
+        src: localVideo("influencer/jain-life", { width: 360, height: 640 }),
         orientation: "portrait",
         alt: "Jain Life — Content Creation & Brand Identity",
+      },
+    ],
+  },
+];
+
+// "More of our work" on the Web Experiences page: every project from the main
+// row again, plus the extra showreels. Same format as the categories above.
+const webPortfolioCategories = [
+  {
+    id: "web-websites",
+    title: "Websites",
+    description: "Travel, wellness and finance websites, live and in use.",
+    items: [
+      {
+        type: "image",
+        src: localImage("web-experiences/anaya-escapes.webp"),
+        orientation: "landscape",
+        alt: "Anaya Escapes — Travel / Tourism Website",
+      },
+      {
+        type: "image",
+        src: localImage("web-experiences/tranquility-lux.webp"),
+        orientation: "landscape",
+        alt: "Tranquility Lux — Wellness E-commerce Website",
+      },
+      {
+        type: "image",
+        src: localImage("web-experiences/navi-mudra.webp"),
+        orientation: "landscape",
+        alt: "Navi Mudra — Finance CRM / SaaS Website",
+      },
+      {
+        type: "image",
+        src: localImage("web-experiences/travelocity-tourism.webp"),
+        orientation: "landscape",
+        alt: "Travelocity Tourism — Travel / Tourism Website",
+      },
+      {
+        type: "image",
+        src: localImage("web-experiences/travplan.webp"),
+        orientation: "landscape",
+        alt: "Travplan — Travel Planning Platform",
+      },
+    ],
+  },
+  {
+    id: "web-showreels",
+    title: "Showreels",
+    description: "Motion walkthroughs of websites and digital products.",
+    items: [
+      {
+        type: "video",
+        src: localVideo("web-experiences/restaurant-booking-showreel", WIDE_VIDEO),
+        orientation: "landscape",
+        alt: "Web Showreel — Restaurant Booking Website",
+      },
+      {
+        type: "video",
+        src: localVideo("web-experiences/architecture-website-showreel", {
+          width: 1920,
+          height: 1080,
+        }),
+        orientation: "landscape",
+        alt: "Web Showreel — Architecture Website",
+      },
+      {
+        type: "video",
+        src: localVideo("web-experiences/drone-code-animation", {
+          width: 1280,
+          height: 720,
+        }),
+        orientation: "landscape",
+        alt: "Web Showreel — Code to Flight Animation",
       },
     ],
   },
@@ -1066,13 +1196,14 @@ const featureFrame = feature?.closest(".case-feature");
 const hero = document.querySelector("[data-case-hero]");
 const thumbnailRail = document.querySelector("[data-case-thumbnails]");
 
-/* --- Portfolio categories (Media, Editing & Influencer Marketing pages) --- */
+/* --- Portfolio categories ("More of our work") --- */
 
 const mediaPortfolio = document.querySelector("[data-media-portfolio]");
 const portfolioCategoriesByCase = new Map([
   [cases.media, mediaPortfolioCategories],
   [cases.editing, editingPortfolioCategories],
   [cases.influencer, influencerPortfolioCategories],
+  [cases.web, webPortfolioCategories],
 ]);
 const portfolioCategories = portfolioCategoriesByCase.get(currentCase) || [];
 
@@ -1235,20 +1366,33 @@ if (feature && featureFrame && caseVideos.some(Boolean)) {
   });
 }
 
-// Client works: show the selected client's name, category and services in the
-// feature caption (influencer-marketing.html has the services list).
+// Client works: show the selected work's details in the feature caption.
+// influencer-marketing.html has a services list; web-experiences.html has a
+// short description and a "Visit website" link. Each page fills what it has.
 const servicesList = document.querySelector("[data-case-services]");
+const workLink = document.querySelector("[data-case-link]");
 
 function showWorkDetails(work) {
   setText("[data-case-person]", work.client);
   setText("[data-case-role]", work.category);
+  setText("[data-case-about]", work.about);
   servicesList?.replaceChildren(
-    ...work.services.map((service) => {
+    ...(work.services || []).map((service) => {
       const item = document.createElement("li");
       item.textContent = service;
       return item;
     }),
   );
+  if (workLink) {
+    // Projects without a live site (no `link`) hide the link.
+    workLink.hidden = !work.link;
+    if (work.link) workLink.href = work.link;
+    else workLink.removeAttribute("href");
+    workLink.setAttribute(
+      "aria-label",
+      `Visit the ${work.client} website (opens in a new tab)`,
+    );
+  }
 }
 
 function showItem(source, activeIndex, { userChose = false } = {}) {
@@ -1365,4 +1509,5 @@ caseThumbs.forEach((source, index) => {
   thumbnailRail?.append(button);
 });
 
-showItem(currentCase.image, 0);
+// Start on the first work's image (Web Experiences) or the page image.
+showItem(works[0]?.image || currentCase.image, 0);

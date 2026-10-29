@@ -12,7 +12,7 @@
       property="og:description"
       content="Explore OGMedia's web experiences, interactive installations, and digital events."
     />
-    <meta property="og:url" content="https://ogengine.co/portfolio/events.html" />
+    <meta property="og:url" content="https://ogengine.co/portfolio/web-experiences.html" />
     <meta
       property="og:image"
       content="https://ogengine.co/portfolio/og-portfolio.jpg"
@@ -37,7 +37,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="detail-page portfolio-case" data-case="events">
+  <body class="detail-page portfolio-case" data-case="web">
     <section class="case-landing">
       <img class="case-landing-image" data-case-hero alt="" />
       <div class="case-landing-overlay" aria-hidden="true"></div>
@@ -68,14 +68,26 @@
         <p class="case-eyebrow" data-case-eyebrow></p>
         <h1 class="case-headline" data-case-headline></h1>
       </section>
-      <figure class="case-feature">
+      <!-- case-feature--caption-below: the caption sits below the picture. -->
+      <figure class="case-feature case-feature--caption-below">
         <img class="case-feature-image" data-case-feature alt="" />
+        <!-- Filled by case.js with the selected project. -->
         <figcaption class="case-feature-caption">
           <div>
             <p class="case-person" data-case-person></p>
             <p class="case-role" data-case-role></p>
           </div>
-          <p class="case-quote" data-case-quote></p>
+          <div class="case-about">
+            <p data-case-about></p>
+            <a
+              class="case-link"
+              data-case-link
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+              >Visit website &#8599;</a
+            >
+          </div>
         </figcaption>
       </figure>
       <nav
@@ -84,6 +96,24 @@
         aria-label="Related work"
       ></nav>
     </main>
+    <!-- More of our work: galleries filled by case.js (webPortfolioCategories). -->
+    <section
+      class="media-portfolio"
+      data-media-portfolio
+      aria-labelledby="web-portfolio-title"
+    >
+      <header class="media-portfolio-header">
+        <p class="case-eyebrow">Beyond the highlights</p>
+        <h2 id="web-portfolio-title">More of our work</h2>
+        <p>
+          Websites and digital products we've designed, built and brought online.
+        </p>
+      </header>
+      <div
+        class="media-portfolio-categories"
+        data-media-portfolio-categories
+      ></div>
+    </section>
     <footer class="case-footer">
       <a href="index.html">Back to index</a>
       <span class="case-footer-credit">

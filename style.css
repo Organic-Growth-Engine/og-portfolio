@@ -590,9 +590,9 @@ body {
   --brand-bg-small: url("assets/optimized/IM-2-feature-960.webp");
 }
 
-#events-section .brand-bg {
-  --brand-bg: url("assets/optimized/Events-feature.webp");
-  --brand-bg-small: url("assets/optimized/Events-feature-960.webp");
+#web-experiences-section .brand-bg {
+  --brand-bg: url("assets/optimized/Web-feature.webp");
+  --brand-bg-small: url("assets/optimized/Web-feature-960.webp");
 }
 
 .brand-bg-img {
@@ -1044,6 +1044,62 @@ body {
   line-height: 1.5;
 }
 
+/* Project details for Web Experiences: a short description and a link to the
+   live site, in the same small type as the services list. */
+.case-about {
+  max-width: 18rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-align: right;
+}
+
+.case-about p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.case-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffffff;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.case-link:hover,
+.case-link:focus-visible {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.case-link[hidden] {
+  display: none;
+}
+
+/* Web Experiences: the descriptions are long and the screenshots are busy, so
+   the caption always sits below the picture instead of covering it. */
+.case-feature--caption-below.has-video {
+  aspect-ratio: auto;
+}
+
+.case-feature--caption-below .case-feature-image,
+.case-feature--caption-below .case-feature-video {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.case-feature--caption-below::after {
+  display: none;
+}
+
+.case-feature--caption-below .case-feature-caption {
+  position: static;
+  padding: 1rem clamp(1rem, 2vw, 2rem) 1.2rem;
+}
+
 .case-thumbnails {
   grid-column: 1 / -1;
   display: grid;
@@ -1447,7 +1503,8 @@ body {
   }
 
   .case-quote,
-  .case-services {
+  .case-services,
+  .case-about {
     max-width: 11rem;
   }
 
@@ -1494,7 +1551,8 @@ body {
   }
 
   .case-quote,
-  .case-services {
+  .case-services,
+  .case-about {
     max-width: none;
     text-align: left;
   }
