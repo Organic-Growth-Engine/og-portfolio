@@ -71,14 +71,19 @@
         <p class="case-eyebrow" data-case-eyebrow></p>
         <h1 class="case-headline" data-case-headline></h1>
       </section>
-      <figure class="case-feature">
+      <!-- case-feature--details: on phones the caption sits below the video. -->
+      <figure class="case-feature case-feature--details">
         <img class="case-feature-image" data-case-feature alt="" />
+        <!-- Filled by case.js with the selected client work. -->
         <figcaption class="case-feature-caption">
           <div>
             <p class="case-person" data-case-person></p>
             <p class="case-role" data-case-role></p>
           </div>
-          <p class="case-quote" data-case-quote></p>
+          <div class="case-services">
+            <p class="case-services-title">Services provided</p>
+            <ul data-case-services></ul>
+          </div>
         </figcaption>
       </figure>
       <nav
@@ -87,6 +92,24 @@
         aria-label="Related work"
       ></nav>
     </main>
+    <!-- More of our work: galleries filled by case.js (influencerPortfolioCategories). -->
+    <section
+      class="media-portfolio"
+      data-media-portfolio
+      aria-labelledby="influencer-portfolio-title"
+    >
+      <header class="media-portfolio-header">
+        <p class="case-eyebrow">Beyond the highlights</p>
+        <h2 id="influencer-portfolio-title">More of our work</h2>
+        <p>
+          More creator partnerships and campaigns we've brought to life.
+        </p>
+      </header>
+      <div
+        class="media-portfolio-categories"
+        data-media-portfolio-categories
+      ></div>
+    </section>
     <footer class="case-footer">
       <a href="index.html">Back to index</a>
       <span class="case-footer-credit">

@@ -944,6 +944,14 @@ body {
   min-height: 0;
 }
 
+/* Tall videos (phone reels, see markTallVideo in case.js) fill the wide frame
+   edge to edge with no black bars. The top and bottom are cropped; --video-focus
+   picks which part stays in view (0% = top, 50% = middle), set per work. */
+.case-feature.is-portrait .case-feature-video {
+  object-fit: cover;
+  object-position: 50% var(--video-focus, 30%);
+}
+
 .case-feature-image,
 .case-feature-video {
   width: 100%;
@@ -1009,6 +1017,31 @@ body {
   font-size: 0.75rem;
   line-height: 0.5;
   text-align: left;
+}
+
+/* Services list for client works (Influencer Marketing): takes the quote's
+   place on the right of the caption, in the same small type. */
+.case-services {
+  max-width: 16rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-align: right;
+}
+
+.case-services-title {
+  margin-bottom: 0.3rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-services ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #ffffff;
+  font-size: 0.6rem;
+  line-height: 1.5;
 }
 
 .case-thumbnails {
@@ -1413,8 +1446,30 @@ body {
     gap: 1rem;
   }
 
-  .case-quote {
+  .case-quote,
+  .case-services {
     max-width: 11rem;
+  }
+
+  /* Client works (Influencer Marketing): the frame is short on phones, so the
+     name and services sit below the video instead of covering it. */
+  .case-feature--details.has-video {
+    aspect-ratio: auto;
+  }
+
+  .case-feature--details .case-feature-image,
+  .case-feature--details .case-feature-video {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .case-feature--details::after {
+    display: none;
+  }
+
+  .case-feature--details .case-feature-caption {
+    position: static;
+    padding: 0.9rem 1rem 1rem;
   }
 
   .case-footer {
@@ -1438,9 +1493,27 @@ body {
     align-items: flex-start;
   }
 
-  .case-quote {
+  .case-quote,
+  .case-services {
     max-width: none;
     text-align: left;
+  }
+
+  /* Small screens: services on one wrapped line ("A · B · C") so the caption
+     stays short. */
+  .case-services-title {
+    display: none;
+  }
+
+  .case-services ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .case-services li:not(:last-child)::after {
+    content: "·";
+    margin: 0 0.4em;
+    color: rgba(255, 255, 255, 0.58);
   }
 }
 
