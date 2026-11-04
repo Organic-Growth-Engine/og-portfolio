@@ -439,5 +439,19 @@
     "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/videos/billiard-ads-poster.jpg",
     "width": 1280,
     "height": 720
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Varun+v5+Reel32.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/varun-v5-reel32-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/varun-v5-reel32-poster.jpg",
+    "width": 720,
+    "height": 1280
+  },
+  "https://d3p12bvhtoj2vu.cloudfront.net/media/Varun+v3+Reel07.mp4": {
+    "type": "video",
+    "src": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/varun-v3-reel07-720.mp4",
+    "poster": "https://d3p12bvhtoj2vu.cloudfront.net/optimized/media/varun-v3-reel07-poster.jpg",
+    "width": 720,
+    "height": 1280
   }
 }
