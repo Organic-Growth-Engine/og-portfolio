@@ -1,3 +1,4 @@
+import { initSignupForm } from "./media-leads.js";
 import { animate, scroll } from "motion";
 
 /**
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initOgInterlude();
   initPinnedSections();
   initSectionLinks();
+  initSignupForm();
 });
 
 /* --- Scroll-Built OG Interlude --- */
@@ -157,3 +159,4 @@ function initLiveClock() {
   tick();
   setInterval(tick, 1000);
 }
+
