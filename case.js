@@ -607,6 +607,18 @@ const editingPortfolioCategories = [
         orientation: "landscape",
         alt: "Talking heads video",
       },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Varun+v5+Reel32.mp4",
+        orientation: "landscape",
+        alt: "Varun talking head reel version 5",
+      },
+      {
+        type: "video",
+        src: "https://d3p12bvhtoj2vu.cloudfront.net/media/Varun+v3+Reel07.mp4",
+        orientation: "landscape",
+        alt: "Varun talking head reel version 3",
+      },
     ],
   },
   {
