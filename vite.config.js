@@ -8,7 +8,7 @@ const pages = [
   "smm",
   "performance-marketing",
   "influencer-marketing",
-  "events",
+  "web-experiences",
 ];
 
 module.exports = defineConfig({
